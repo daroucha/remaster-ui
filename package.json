@@ -24,5 +24,23 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
-  }
+  },
+  "description": "UI library for front-end developement based on React",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daroucha/master-ui.git"
+  },
+  "keywords": [
+    "ui",
+    "design",
+    "system",
+    "library"
+  ],
+  "author": "Daniel Aroucha",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/daroucha/master-ui/issues"
+  },
+  "homepage": "https://github.com/daroucha/master-ui#readme"
 }

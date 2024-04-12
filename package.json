@@ -3,6 +3,40 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "description": "UI library for front-end developement based on React",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daroucha/master-ui.git"
+  },
+  "keywords": [
+    "ui",
+    "design",
+    "system",
+    "library"
+  ],
+  "author": "Daniel Aroucha",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/daroucha/master-ui/issues"
+  },
+  "homepage": "https://github.com/daroucha/master-ui#readme",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/style.css"
+  },
+  "files": [
+    "/dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -12,8 +46,10 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@types/node": "^20.12.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "vite-plugin-dts": "^3.8.2"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.3.2",
@@ -37,23 +73,5 @@
     "storybook": "^8.0.8",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
-  },
-  "description": "UI library for front-end developement based on React",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/daroucha/master-ui.git"
-  },
-  "keywords": [
-    "ui",
-    "design",
-    "system",
-    "library"
-  ],
-  "author": "Daniel Aroucha",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/daroucha/master-ui/issues"
-  },
-  "homepage": "https://github.com/daroucha/master-ui#readme"
+  }
 }

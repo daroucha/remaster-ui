@@ -22,5 +22,5 @@ export default defineConfig({
     sourcemap: true,
     emptyOutDir: true,
   },
-  plugins: [react(), dts()],
+  plugins: [react(), dts({ exclude: ['**/*.stories.tsx'] })],
 });

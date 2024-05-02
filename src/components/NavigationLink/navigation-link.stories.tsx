@@ -14,10 +14,10 @@ type Story = StoryObj<typeof NavigationLink>
 export const Default: Story = {
   args: {
     active: false,
-    size: 'small',
-    text: 'Navigation Link',
     disabled: false,
     leading: <Heart />,
+    size: 'small',
+    text: 'Navigation Link',
     trailing: <ArrowRight />,
   },
 }

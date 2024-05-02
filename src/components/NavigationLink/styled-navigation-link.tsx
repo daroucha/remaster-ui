@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import '@/typography/sansSerif.css'
+import SansSerif from '@/fonts/sansSerif'
 
 const StyledNL = styled.a<{
   $state?: boolean
@@ -47,12 +47,12 @@ const NLIcon = styled.div`
   aspect-ratio: 1/1;
   color: inherit;
   display: block;
-  flex-shrink: 0;
   flex-grow: 0;
+  flex-shrink: 0;
   height: ${$size.icon.xs};
 `
 
-const NLText = styled.span<{
+const NLText = styled(SansSerif)<{
   $state?: boolean
   $size: string
 }>`

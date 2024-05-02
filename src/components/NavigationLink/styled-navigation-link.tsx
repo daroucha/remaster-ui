@@ -1,11 +1,23 @@
 import styled from 'styled-components'
 
-const StyledNavigationLink = styled.a`
+const StyledNL = styled.a<{
+  $state?: boolean
+  $size: string
+  $disabled?: boolean
+}>`
   display: block;
 `
 
-const NavigationLinkContent = styled.div`
+const NLContent = styled.div`
   display: block;
 `
 
-export { StyledNavigationLink, NavigationLinkContent }
+const NLIcon = styled.div`
+  display: block;
+`
+
+const NLText = styled.span`
+  display: block;
+`
+
+export { StyledNL, NLContent, NLIcon, NLText }

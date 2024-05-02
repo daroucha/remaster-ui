@@ -1,15 +1,14 @@
-import {
-  StyledNavigationLink,
-  NavigationLinkContent,
-} from './styled-navigation-link'
+import { StyledNL, NLContent, NLIcon, NLText } from './styled-navigation-link'
 
 interface PropsNavigationLink {
   active: boolean
   size: 'small' | 'medium'
   text: string
-  disabled: boolean
-  leading: React.ReactNode
-  trailing: React.ReactNode
+  disabled?: boolean
+  leading?: React.ReactNode
+  trailing?: React.ReactNode
+  onClick?: () => void
+  href?: string
 }
 
 function NavigationLink({
@@ -19,11 +18,23 @@ function NavigationLink({
   disabled,
   leading,
   trailing,
+  onClick,
+  href,
 }: PropsNavigationLink) {
   return (
-    <StyledNavigationLink $state={active} $disabled={disabled}>
-      <NavigationLinkContent>{text}</NavigationLinkContent>
-    </StyledNavigationLink>
+    <StyledNL
+      $state={active}
+      $size={size}
+      $disabled={disabled}
+      onClick={() => onClick && onClick()}
+      href={href}
+    >
+      <NLContent>
+        {leading && <NLIcon>{leading}</NLIcon>}
+        <NLText>{text}</NLText>
+        {trailing && <NLIcon>{trailing}</NLIcon>}
+      </NLContent>
+    </StyledNL>
   )
 }
 

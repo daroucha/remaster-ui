@@ -12,13 +12,16 @@ const StyledNL = styled.a<{
   color: ${(props) =>
     props.$disabled
       ? $color.text.plain.tertiary.light
-      : $color.text.action.default.neutral.light};
+      : props.$state
+        ? $color.text.action.default.accent.light
+        : $color.text.action.default.neutral.light};
   cursor: ${(props) => (props.$disabled ? 'default' : 'pointer')};
-  display: inline-block;
+  display: inline-flex;
   height: auto;
   opacity: ${(props) => (props.$disabled ? '60%' : '100%')};
   padding-block: ${$space.block.sm};
-  padding-inline: ${$space.inline.sm};
+  padding-inline: ${(props) =>
+    props.$size === 'medium' ? $space.inline.lg : $space.inline.sm};
 
   &:hover {
     background: ${(props) =>
@@ -49,12 +52,21 @@ const NLIcon = styled.div`
   height: ${$size.icon.xs};
 `
 
-const NLText = styled.span`
+const NLText = styled.span<{
+  $state?: boolean
+  $size: string
+}>`
   color: inherit;
   display: block;
   font-family: ${$primitives.typography.fontFamily.sans};
-  font-size: ${$size.type.fontSize.text.sm};
-  font-weight: ${$primitives.typography.fontWeight.sans.regular};
+  font-size: ${(props) =>
+    props.$size === 'medium'
+      ? $size.type.fontSize.text.md
+      : $size.type.fontSize.text.sm};
+  font-weight: ${(props) =>
+    props.$state
+      ? $primitives.typography.fontWeight.sans.medium
+      : $primitives.typography.fontWeight.sans.regular};
   line-height: ${$size.type.lineHeight.text.sm};
   user-select: none;
 `

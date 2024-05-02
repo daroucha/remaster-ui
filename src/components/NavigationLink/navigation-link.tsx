@@ -31,7 +31,11 @@ function NavigationLink({
     >
       <NLContent>
         {leading && <NLIcon>{leading}</NLIcon>}
-        <NLText>{text}</NLText>
+
+        <NLText $state={active} $size={size}>
+          {text}
+        </NLText>
+
         {trailing && <NLIcon>{trailing}</NLIcon>}
       </NLContent>
     </StyledNL>

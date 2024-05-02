@@ -44,7 +44,7 @@ const $primitives = {
   },
   typography: {
     fontFamily: {
-      sans: 'CircularStd',
+      sans: 'CircularStd, -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif',
       mono: 'InputMono',
     },
     fontWeight: {

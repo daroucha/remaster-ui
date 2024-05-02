@@ -1,6 +1,6 @@
 import $primitives from './primitives'
 
-const $sizes = {
+const $size = {
   icon: {
     lg: $primitives.units['8x'],
     md: $primitives.units['6x'],
@@ -57,4 +57,4 @@ const $sizes = {
   },
 }
 
-export default $sizes
+export default $size

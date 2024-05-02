@@ -1,6 +1,6 @@
 import $primitives from './primitives'
 
-const $spaces = {
+const $space = {
   gap: {
     '6xl': $primitives.units['12x'],
     '4xl': $primitives.units['8x'],
@@ -34,4 +34,4 @@ const $spaces = {
   },
 }
 
-export default $spaces
+export default $space

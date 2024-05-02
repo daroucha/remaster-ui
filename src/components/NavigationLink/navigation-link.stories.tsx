@@ -11,7 +11,7 @@ const meta: Meta<typeof NavigationLink> = {
 export default meta
 type Story = StoryObj<typeof NavigationLink>
 
-export const FirstStory: Story = {
+export const Default: Story = {
   args: {
     active: false,
     size: 'small',

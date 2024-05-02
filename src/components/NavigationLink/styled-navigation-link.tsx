@@ -22,6 +22,7 @@ const StyledNL = styled.a<{
   padding-block: ${$space.block.sm};
   padding-inline: ${(props) =>
     props.$size === 'medium' ? $space.inline.lg : $space.inline.sm};
+  width: max-content;
 
   &:hover {
     background: ${(props) =>

@@ -45,7 +45,7 @@ const $size = {
     },
   },
   radius: {
-    rounded: '10000',
+    rounded: '10000px',
     lg: $primitives.units['3x'],
     md: $primitives.units['2x'],
     sm: $primitives.units['1.5x'],

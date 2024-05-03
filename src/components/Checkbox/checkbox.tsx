@@ -23,6 +23,7 @@ interface PropsCheckbox {
     event: React.ChangeEvent<HTMLInputElement>,
     data: { checked: boolean; id: string },
   ) => void
+  indeterminate?: boolean
   text?: string
   tip?: string
   value?: string | string[]
@@ -30,9 +31,10 @@ interface PropsCheckbox {
 
 function Checkbox({
   checked,
-  disabled,
+  disabled = false,
   label,
   onChange,
+  indeterminate = false,
   text,
   tip,
   value,

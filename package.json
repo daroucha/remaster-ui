@@ -44,12 +44,14 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.5",
     "@types/node": "^20.12.7",
     "eslint-config-airbnb": "^19.0.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "styled-components": "^6.1.8",
     "vite-plugin-dts": "^3.8.2",
     "vite-plugin-svgr": "^4.2.0"

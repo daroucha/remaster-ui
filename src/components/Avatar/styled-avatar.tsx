@@ -41,6 +41,8 @@ const AvatarIcon = styled.div`
   aspect-ratio: 1/1;
   color: ${$primitives.colors.transparency.black[60]};
   display: block;
+  flex-grow: 0;
+  flex-shrink: 0;
   height: 50%;
   max-height: ${$size.icon.lg};
   max-width: ${$size.icon.lg};

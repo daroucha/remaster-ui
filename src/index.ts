@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+export * from '@/tokens'
 export * from '@/components'
 export * from '@/icons'
 export * from '@phosphor-icons/react'

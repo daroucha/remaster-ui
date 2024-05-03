@@ -10,6 +10,6 @@
 import Bluray from './assets/bluray.svg?react'
 import DtsMa from './assets/dts-ma.svg?react'
 import DolbyTrueHd from './assets/dolby-trhd.svg?react'
-import Spinner from './assets/spinner.svg?react'
+import SvgSpinner from './assets/spinner.svg?react'
 
-export { Bluray, DtsMa, DolbyTrueHd, Spinner }
+export { Bluray, DtsMa, DolbyTrueHd, SvgSpinner }

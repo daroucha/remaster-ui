@@ -6,7 +6,7 @@ import {
 import StyledPrimaryButton from './styled-primary-button'
 import StyledSecondaryButton from './styled-secondary-button'
 import StyledTertiaryButton from './styled-tertiary-button'
-import { Spinner } from '@/icons'
+import { SvgSpinner } from '@/icons'
 
 const components: any = {
   primary: StyledPrimaryButton,
@@ -44,7 +44,7 @@ function ActionButton({
     >
       {loading && (
         <ButtonLoadingBase>
-          <Spinner />
+          <SvgSpinner />
         </ButtonLoadingBase>
       )}
 

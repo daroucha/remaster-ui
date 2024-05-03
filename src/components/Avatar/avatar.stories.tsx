@@ -1,4 +1,5 @@
 import Avatar from './avatar'
+import { UserCircle } from '@phosphor-icons/react'
 
 export default {
   title: '🖼️ Icons and Imagens/Avatar',
@@ -8,7 +9,7 @@ export default {
 export const Default = {
   args: {
     alt: 'avatar',
-    icon: '',
+    icon: <UserCircle weight="fill" />,
     src: '',
     size: 32,
     text: 'Avatar Text',

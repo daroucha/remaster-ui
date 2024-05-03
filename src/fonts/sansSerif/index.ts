@@ -5,13 +5,20 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import { $primitives } from '@/tokens'
 import styled from 'styled-components'
 import sansSerifBook from './assets/book'
 import sansSerifMedium from './assets/medium'
 import sansSerifBold from './assets/bold'
 import sansSerifBlack from './assets/black'
 
-const SansSerif = styled.span`
+const FontTreatment = styled.span`
+  font-family: ${$primitives.typography.fontFamily.sans};
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+`
+
+const SansSerif = styled(FontTreatment)`
   @font-face {
     font-family: CircularStd;
     font-weight: 300;

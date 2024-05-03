@@ -10,7 +10,7 @@ const components: any = {
 interface PropsCarouselButton {
   direction: 'prev' | 'next'
   disabled?: boolean
-  onClick?: () => void
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
   size: 'small' | 'medium'
 }
 
@@ -29,7 +29,15 @@ function CarouselButton({
       id={CarouselButtonId}
       disabled={disabled}
       $size={size}
-      onClick={() => !disabled && onClick && onClick()}
+      onClick={(event) => {
+        if (disabled) {
+          event.preventDefault()
+        }
+
+        if (onClick) {
+          onClick(event)
+        }
+      }}
     >
       <CBIcon>
         <Icon weight="fill" />

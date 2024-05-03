@@ -7,7 +7,7 @@ import StyledPrimaryButton from './styled-primary-button'
 import StyledSecondaryButton from './styled-secondary-button'
 import StyledTertiaryButton from './styled-tertiary-button'
 import { SvgSpinner } from '@/icons'
-import { useId } from 'react'
+import { MouseEvent, useId } from 'react'
 
 const components: any = {
   primary: StyledPrimaryButton,
@@ -19,7 +19,7 @@ interface PropsActionButton {
   disabled?: boolean
   leading?: React.ReactNode
   loading?: boolean
-  onClick?: () => void
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
   size: 'small' | 'medium'
   text: string
   trailing?: React.ReactNode
@@ -44,7 +44,15 @@ function ActionButton({
     <Button
       id={ActionButtonId}
       disabled={disabled}
-      onClick={() => !disabled && onClick && onClick()}
+      onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        if (disabled) {
+          event.preventDefault()
+        }
+
+        if (onClick) {
+          onClick(event)
+        }
+      }}
     >
       {loading && (
         <ButtonLoadingBase>

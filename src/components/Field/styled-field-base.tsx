@@ -25,7 +25,6 @@ const FieldBaseLegend = styled(SansSerif)`
 
 const FieldBaseLabel = styled.span`
   color: inherit;
-  font-family: ${$primitives.typography.fontFamily.sans};
   font-size: ${$size.type.fontSize.text.md};
   font-weight: ${$primitives.typography.fontWeight.sans.bold};
   line-height: ${$size.type.lineHeight.text.md};
@@ -40,7 +39,6 @@ const FieldBaseTipArea = styled(SansSerif)`
 
 const FieldBaseTip = styled.p`
   color: inherit;
-  font-family: ${$primitives.typography.fontFamily.sans};
   font-size: ${$size.type.fontSize.text.sm};
   font-weight: ${$primitives.typography.fontWeight.sans.regular};
   line-height: ${$size.type.lineHeight.text.sm};

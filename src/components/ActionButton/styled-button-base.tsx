@@ -39,7 +39,6 @@ const ButtonIconBase = styled.div<{ $loading?: boolean }>`
 const ButtonTextBase = styled(SansSerif)<{ $size: string; $loading?: boolean }>`
   color: inherit;
   display: block;
-  font-family: ${$primitives.typography.fontFamily.sans};
   font-size: ${(props) =>
     props.$size === 'medium'
       ? $size.type.fontSize.text.md

@@ -11,5 +11,6 @@ export const Default = {
     label: 'Label',
     text: 'Checkbox text',
     tip: "I'm a monster you created in your dad's memory",
+    value: ['property'],
   },
 }

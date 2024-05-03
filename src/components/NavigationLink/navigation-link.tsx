@@ -5,7 +5,7 @@ interface PropsNavigationLink {
   disabled?: boolean
   href?: string
   leading?: React.ReactNode
-  onClick?: () => void
+  onClick?: (event: React.MouseEvent<Element>) => void
   size: 'small' | 'medium'
   text: string
   trailing?: React.ReactNode
@@ -26,7 +26,15 @@ function NavigationLink({
       $state={active}
       $size={size}
       $disabled={disabled}
-      onClick={() => onClick && onClick()}
+      onClick={(event) => {
+        if (disabled) {
+          event.preventDefault()
+        }
+
+        if (onClick) {
+          onClick(event)
+        }
+      }}
       href={href}
     >
       <NLContent>

@@ -29,7 +29,6 @@ const AvatarImage = styled.img`
 
 const AvatarText = styled(SansSerif)`
   color: ${$primitives.colors.transparency.black[60]};
-  font-family: ${$primitives.typography.fontFamily.sans};
   font-size: ${$size.type.fontSize.text.sm};
   font-weight: ${$primitives.typography.fontWeight.sans.regular};
   text-transform: uppercase;

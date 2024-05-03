@@ -6,4 +6,5 @@
  */
 
 export * from '@/components/Avatar'
+export * from '@/components/ActionButton'
 export * from '@/components/NavigationLink'

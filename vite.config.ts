@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
+import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
   resolve: {
@@ -28,5 +29,10 @@ export default defineConfig({
     sourcemap: true,
     emptyOutDir: true,
   },
-  plugins: [react(), libInjectCss(), dts({ exclude: ['**/*.stories.tsx'] })],
+  plugins: [
+    react(),
+    libInjectCss(),
+    svgr(),
+    dts({ exclude: ['**/*.stories.tsx'] }),
+  ],
 })

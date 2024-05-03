@@ -5,8 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import Bluray from './assets/bluray.svg'
-import DtsMa from './assets/dts-ma.svg'
-import DolbyTrueHd from './assets/dolby-trhd.svg'
+/// <reference types="vite-plugin-svgr/client" />
 
-export { Bluray, DtsMa, DolbyTrueHd }
+import Bluray from './assets/bluray.svg?react'
+import DtsMa from './assets/dts-ma.svg?react'
+import DolbyTrueHd from './assets/dolby-trhd.svg?react'
+import Spinner from './assets/spinner.svg?react'
+
+export { Bluray, DtsMa, DolbyTrueHd, Spinner }

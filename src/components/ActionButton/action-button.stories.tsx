@@ -1,18 +1,18 @@
-import NavigationLink from './navigation-link'
+import PrimaryButton from './primary-button'
 import { Heart, ArrowRight } from '@phosphor-icons/react'
 
 export default {
-  title: '🧭 Navigation/NavigationLink',
-  component: NavigationLink,
+  title: '🖲️ Buttons/ActionButton/PrimaryButton',
+  component: PrimaryButton,
 }
 
 export const Default = {
   args: {
-    active: false,
+    loading: false,
     disabled: false,
     leading: <Heart />,
     size: 'small',
-    text: 'Navigation Link',
+    text: 'Primary Button',
     trailing: <ArrowRight />,
   },
 }

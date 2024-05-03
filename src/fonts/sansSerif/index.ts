@@ -1,8 +1,15 @@
+/**
+ * Daniel Aroucha, 2024
+ *
+ * This source code is licensed under the GPL-3.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 import styled from 'styled-components'
-import sansSerifBook from './book'
-import sansSerifMedium from './medium'
-import sansSerifBold from './bold'
-import sansSerifBlack from './black'
+import sansSerifBook from './assets/book'
+import sansSerifMedium from './assets/medium'
+import sansSerifBold from './assets/bold'
+import sansSerifBlack from './assets/black'
 
 const SansSerif = styled.span`
   @font-face {

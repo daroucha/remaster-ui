@@ -39,7 +39,6 @@ function ActionButton({
 
   return (
     <Button
-      as={StyledPrimaryButton}
       disabled={disabled}
       onClick={() => !disabled && onClick && onClick()}
     >

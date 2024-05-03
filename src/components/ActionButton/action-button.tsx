@@ -7,6 +7,7 @@ import StyledPrimaryButton from './styled-primary-button'
 import StyledSecondaryButton from './styled-secondary-button'
 import StyledTertiaryButton from './styled-tertiary-button'
 import { SvgSpinner } from '@/icons'
+import { useId } from 'react'
 
 const components: any = {
   primary: StyledPrimaryButton,
@@ -35,10 +36,13 @@ function ActionButton({
   trailing,
   variant,
 }: PropsActionButton) {
+  const ActionButtonId = useId()
+
   const Button = components[variant]
 
   return (
     <Button
+      id={ActionButtonId}
       disabled={disabled}
       onClick={() => !disabled && onClick && onClick()}
     >

@@ -1,5 +1,6 @@
 import { StyledCarouselButton, CBIcon } from './styled-carousel-button'
 import { CaretLeft, CaretRight } from '@phosphor-icons/react'
+import { useId } from 'react'
 
 const components: any = {
   prev: CaretLeft,
@@ -19,9 +20,13 @@ function CarouselButton({
   onClick,
   size,
 }: PropsCarouselButton) {
+  const CarouselButtonId = useId()
+
   const Icon = components[direction]
+
   return (
     <StyledCarouselButton
+      id={CarouselButtonId}
       disabled={disabled}
       $size={size}
       onClick={() => !disabled && onClick && onClick()}

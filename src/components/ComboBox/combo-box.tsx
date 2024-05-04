@@ -1,4 +1,3 @@
-import { useId } from 'react'
 import { PropsField } from '../Field/field-props'
 import {
   StyledFieldBase,
@@ -8,51 +7,51 @@ import {
   FieldBaseTip,
 } from '../Field/styled-field-base'
 import { StyledComboBox } from './style-combo-box'
-import {
-  InputBaseIcon,
-  InputBaseTrailing,
-  InputBaseElement,
-  StyledInputBase,
-} from '../Field/styled-input-base'
 import { PropsInput } from '../Field/input-props'
+import ComboBoxContext from './combo-box-context'
+import ComboBoxInput from './combo-box-input'
+import { useContext, useMemo } from 'react'
 
 interface PropsComboBox extends PropsField, PropsInput {
-  options: string[]
+  children: React.ReactNode
 }
 
-function ComboBox({ options, label, tip, leading, trailing }: PropsComboBox) {
-  const comboBoxId = useId()
+function ComboBox({ disabled, label, tip, children }: PropsComboBox) {
+  const value = useMemo(() => ({ disabled }), [disabled])
 
   return (
-    <StyledFieldBase>
-      {label && (
-        <FieldBaseLegend as="legend">
-          <FieldBaseLabel>{label}</FieldBaseLabel>
-        </FieldBaseLegend>
-      )}
+    <ComboBoxContext.Provider value={value}>
+      <StyledFieldBase>
+        {label && (
+          <FieldBaseLegend as="legend">
+            <FieldBaseLabel>{label}</FieldBaseLabel>
+          </FieldBaseLegend>
+        )}
 
-      <StyledComboBox>
-        <StyledInputBase as="label">
-          {leading && <InputBaseIcon>{leading}</InputBaseIcon>}
+        <StyledComboBox>{children}</StyledComboBox>
 
-          <InputBaseTrailing>dropdown</InputBaseTrailing>
-
-          <InputBaseElement
-            $leading={!!leading}
-            $trailing={true}
-            id={comboBoxId}
-            type="text"
-          />
-        </StyledInputBase>
-      </StyledComboBox>
-
-      {tip && (
-        <FieldBaseTipArea>
-          <FieldBaseTip>{tip}</FieldBaseTip>
-        </FieldBaseTipArea>
-      )}
-    </StyledFieldBase>
+        {tip && (
+          <FieldBaseTipArea>
+            <FieldBaseTip>{tip}</FieldBaseTip>
+          </FieldBaseTipArea>
+        )}
+      </StyledFieldBase>
+    </ComboBoxContext.Provider>
   )
 }
+
+export const useComboBoxContext = () => {
+  const context = useContext(ComboBoxContext)
+
+  if (!context) {
+    throw new Error(
+      `ComboBox compound components cannot be rendered outside the ComboBox component`,
+    )
+  }
+
+  return context
+}
+
+ComboBox.Input = ComboBoxInput
 
 export default ComboBox

@@ -1,3 +1,4 @@
+import prefix from '@/utils/prefix'
 import {
   ButtonIconBase,
   ButtonTextBase,
@@ -36,7 +37,7 @@ function ActionButton({
   trailing,
   variant,
 }: PropsActionButton) {
-  const ActionButtonId = useId()
+  const ActionButtonId = prefix + useId()
 
   const Button = components[variant]
 

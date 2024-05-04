@@ -2,7 +2,7 @@ import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
 import styled from 'styled-components'
 
-const StyledInputBase = styled(SansSerif)`
+const StyledInputBase = styled(SansSerif)<{ $disabled?: boolean }>`
   align-items: center;
   box-sizing: border-box;
   color: ${$color.text.plain.secondary.light};
@@ -10,7 +10,9 @@ const StyledInputBase = styled(SansSerif)`
   flex-direction: row;
   height: auto;
   justify-content: space-between;
+  opacity: ${(props) => (props.$disabled ? '60%' : '100%')};
   position: relative;
+  width: 100%;
 `
 
 const InputBaseIcon = styled.div`
@@ -64,9 +66,14 @@ const InputBaseElement = styled.input<{
     props.$trailing ? $primitives.units['10x'] : $space.inline.md};
   width: 100%;
 
+  &::placeholder:not(:focus) {
+    color: inherit;
+  }
+
   &:focus {
     box-shadow: inset 0 0 0 ${$size.border.md}
       ${$color.border.focus.primary.light};
+    color: ${$color.text.plain.primary.light};
   }
 `
 

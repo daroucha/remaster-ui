@@ -1,3 +1,4 @@
+import prefix from '@/utils/prefix'
 import { StyledCarouselButton, CBIcon } from './styled-carousel-button'
 import { CaretLeft, CaretRight } from '@phosphor-icons/react'
 import { useId } from 'react'
@@ -20,7 +21,7 @@ function CarouselButton({
   onClick,
   size,
 }: PropsCarouselButton) {
-  const CarouselButtonId = useId()
+  const CarouselButtonId = prefix + useId()
 
   const Icon = components[direction]
 

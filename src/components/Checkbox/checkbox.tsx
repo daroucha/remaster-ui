@@ -15,10 +15,15 @@ import {
 } from './styled-checkbox'
 import { useId } from 'react'
 import { PropsField } from '../Field/field-props'
+import prefix from '@/utils/prefix'
 
 interface PropsCheckbox extends PropsField {
   checked?: boolean
   indeterminate?: boolean
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    data: { checked: boolean; id: string },
+  ) => void
 }
 
 function Checkbox({
@@ -31,7 +36,7 @@ function Checkbox({
   tip,
   value,
 }: PropsCheckbox) {
-  const checkboxId = useId()
+  const checkboxId = prefix + useId()
 
   return (
     <StyledFieldBase>

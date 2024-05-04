@@ -59,7 +59,7 @@ const $size = {
   },
   border: {
     lg: $primitives.units['1x'],
-    md: $primitives.units['1.5x'],
+    md: $primitives.units['0.5x'],
     sm: '1px',
   },
 }

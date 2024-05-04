@@ -14,19 +14,11 @@ import {
   CheckboxLabel,
 } from './styled-checkbox'
 import { useId } from 'react'
+import { PropsField } from '../Field/field-props'
 
-interface PropsCheckbox {
+interface PropsCheckbox extends PropsField {
   checked?: boolean
-  disabled?: boolean
-  label?: string
-  onChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    data: { checked: boolean; id: string },
-  ) => void
   indeterminate?: boolean
-  text?: string
-  tip?: string
-  value?: string | string[]
 }
 
 function Checkbox({

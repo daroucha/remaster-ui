@@ -5,36 +5,65 @@ import {
   InputBaseElement,
 } from '../Field/styled-input-base'
 import { PropsInput } from '../Field/input-props'
-import { useId } from 'react'
+import { useEffect, useId } from 'react'
 import prefix from '@/utils/prefix'
 import { useComboBoxContext } from './combo-box'
+import IconButton from '../IconButton'
+import { CaretDown, XCircle } from '@phosphor-icons/react'
 
 interface PropsComboBoxInput extends PropsInput {
+  onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
-  value?: string
+  onClear?: (event: React.MouseEvent) => void
+  value: string
 }
 
 function ComboBoxInput({
   leading,
+  onBlur,
   onChange,
+  onClear,
   placeholder,
   value,
 }: PropsComboBoxInput) {
-  const { disabled } = useComboBoxContext()
+  const { disabled, setQuery } = useComboBoxContext()
 
   const comboBoxInputId = prefix + useId()
 
+  useEffect(() => {
+    setQuery(value)
+  }, [value])
+
   return (
-    <StyledInputBase as="label" $disabled={disabled}>
+    <StyledInputBase $disabled={disabled}>
       {leading && <InputBaseIcon>{leading}</InputBaseIcon>}
 
-      <InputBaseTrailing>dropdown</InputBaseTrailing>
+      <InputBaseTrailing>
+        {value && (
+          <IconButton
+            size="small"
+            leading={<XCircle weight="fill" />}
+            onClick={(event) => {
+              if (onClear) {
+                onClear(event)
+              }
+            }}
+          />
+        )}
+
+        <IconButton size="small" leading={<CaretDown />} />
+      </InputBaseTrailing>
 
       <InputBaseElement
         $leading={!!leading}
         $trailing={true}
         disabled={disabled}
         id={comboBoxInputId}
+        onBlur={(event) => {
+          if (onBlur) {
+            onBlur(event)
+          }
+        }}
         onChange={(event) => {
           if (!disabled && onChange) {
             onChange(event)

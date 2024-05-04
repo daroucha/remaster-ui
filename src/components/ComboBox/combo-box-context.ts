@@ -3,8 +3,13 @@ import { PropsField } from '../Field/field-props'
 
 const initialState = {
   disabled: false,
+  setQuery: () => {},
 }
 
-const ComboBoxContext = createContext<PropsField>(initialState)
+interface ComboBoxModel extends PropsField {
+  setQuery: React.Dispatch<React.SetStateAction<string>>
+}
+
+const ComboBoxContext = createContext<ComboBoxModel>(initialState)
 
 export default ComboBoxContext

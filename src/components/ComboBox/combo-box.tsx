@@ -10,14 +10,16 @@ import { StyledComboBox } from './style-combo-box'
 import { PropsInput } from '../Field/input-props'
 import ComboBoxContext from './combo-box-context'
 import ComboBoxInput from './combo-box-input'
-import { useContext, useMemo } from 'react'
+import { useContext, useMemo, useState } from 'react'
 
 interface PropsComboBox extends PropsField, PropsInput {
   children: React.ReactNode
 }
 
 function ComboBox({ disabled, label, tip, children }: PropsComboBox) {
-  const value = useMemo(() => ({ disabled }), [disabled])
+  const [query, setQuery] = useState('')
+
+  const value = useMemo(() => ({ disabled, setQuery }), [disabled, setQuery])
 
   return (
     <ComboBoxContext.Provider value={value}>

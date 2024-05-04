@@ -5,11 +5,16 @@ import {
   InputBaseElement,
 } from '../Field/styled-input-base'
 import { PropsInput } from '../Field/input-props'
-import { useEffect, useId } from 'react'
+import { useEffect, useId, useState } from 'react'
 import prefix from '@/utils/prefix'
 import { useComboBoxContext } from './combo-box'
 import IconButton from '../IconButton'
-import { CaretDown, XCircle } from '@phosphor-icons/react'
+import { CaretDown, CaretUp, XCircle } from '@phosphor-icons/react'
+
+const components: any = {
+  hide: CaretUp,
+  show: CaretDown,
+}
 
 interface PropsComboBoxInput extends PropsInput {
   onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void
@@ -30,9 +35,13 @@ function ComboBoxInput({
 
   const comboBoxInputId = prefix + useId()
 
+  const [caretDirection, setCaretDirection] = useState('show')
+
   useEffect(() => {
     setQuery(value)
   }, [value])
+
+  const Caret = components[caretDirection]
 
   return (
     <StyledInputBase $disabled={disabled}>
@@ -51,7 +60,7 @@ function ComboBoxInput({
           />
         )}
 
-        <IconButton size="small" leading={<CaretDown />} />
+        <IconButton size="small" leading={<Caret />} />
       </InputBaseTrailing>
 
       <InputBaseElement
@@ -60,6 +69,7 @@ function ComboBoxInput({
         disabled={disabled}
         id={comboBoxInputId}
         onBlur={(event) => {
+          setCaretDirection('show')
           if (onBlur) {
             onBlur(event)
           }
@@ -68,6 +78,9 @@ function ComboBoxInput({
           if (!disabled && onChange) {
             onChange(event)
           }
+        }}
+        onFocus={() => {
+          setCaretDirection('hide')
         }}
         placeholder={placeholder}
         type="text"

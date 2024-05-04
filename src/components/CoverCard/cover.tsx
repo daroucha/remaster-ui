@@ -1,15 +1,9 @@
 import StyledCover from './styled-cover'
+import { PropsCover } from './cover-props'
 
-interface PropsCover {
-  alt?: string
-  size?: number
-  src?: string
-  type: 'bd' | 'dvd' | 'collection'
-}
-
-function Cover({ alt, size, src, type = 'bd' }: PropsCover) {
+function Cover({ alt, hover = false, size, src, type = 'bd' }: PropsCover) {
   return (
-    <StyledCover $type={type} $size={size}>
+    <StyledCover $type={type} $size={size} $hover={hover}>
       {src && <img src={src} alt={alt} />}
     </StyledCover>
   )

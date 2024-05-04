@@ -1,4 +1,4 @@
-import { $size } from '@/tokens'
+import { $size, $motion } from '@/tokens'
 import styled from 'styled-components'
 
 const aspectRatio = (type: string) => {
@@ -33,7 +33,11 @@ const borderRadius = (type: string) => {
   }
 }
 
-const StyledCover = styled.picture<{ $type: string; $size?: number }>`
+const StyledCover = styled.picture<{
+  $type: string
+  $size?: number
+  $hover?: boolean
+}>`
   align-items: center;
   aspect-ratio: ${(props) => aspectRatio(props.$type)};
   background: currentColor;
@@ -46,11 +50,17 @@ const StyledCover = styled.picture<{ $type: string; $size?: number }>`
     props.$size ? props.$size + 'px' : '-webkit-fill-available'};
   justify-content: center;
   min-height: ${$size.icon.lg};
+  transform: ${(props) => (props.$hover ? 'scale(104%)' : 'none')};
+  transition-timing-function: ${$motion.curve.sine};
+  transition-duration: ${$motion.duration.default};
   overflow: hidden;
 
   img {
-    height: 100%;
+    -webkit-user-drag: none;
+    max-width: 100%;
+    min-height: 100%;
     object-fit: cover;
+    user-select: none;
   }
 `
 

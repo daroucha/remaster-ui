@@ -5,18 +5,15 @@ import { useState } from 'react'
 export default {
   title: '📝 Form and Inputs/ComboBox',
   component: ComboBox,
-}
+  render: ({ placeholder, ...args }) => {
+    const people = [
+      'Durward Reynolds',
+      'Kenton Towne',
+      'Therese Wunsch',
+      'Benedict Kessler',
+      'Katelyn Rohan',
+    ]
 
-const people = [
-  'Durward Reynolds',
-  'Kenton Towne',
-  'Therese Wunsch',
-  'Benedict Kessler',
-  'Katelyn Rohan',
-]
-
-export const Default = {
-  render: () => {
     const [selectedPerson, setSelectedPerson] = useState(people[0])
     const [query, setQuery] = useState(selectedPerson)
 
@@ -59,14 +56,10 @@ export const Default = {
     }
 
     return (
-      <ComboBox
-        label="Label"
-        tip="I'm a monster you created in your dad's memory"
-        onClose={handleClose}
-      >
+      <ComboBox onClose={handleClose} {...args}>
         <ComboBox.Input
           leading={<UserCircle />}
-          placeholder="Combo Box"
+          placeholder={placeholder}
           value={query}
           onBlur={handleBlur}
           onChange={handleChange}
@@ -85,5 +78,14 @@ export const Default = {
         </ComboBox.Options>
       </ComboBox>
     )
+  },
+}
+
+export const Default = {
+  args: {
+    label: 'Label',
+    tip: "I'm a monster you created in your dad's memory",
+    disabled: false,
+    placeholder: 'Combo Box',
   },
 }

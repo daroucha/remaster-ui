@@ -1,6 +1,7 @@
 import { Check } from '@phosphor-icons/react'
 import { useComboBoxContext } from './combo-box'
 import { CBMenu, CBOption, CBOptionText } from './styled-combo-box'
+import { useTransition, animated, easings } from '@react-spring/web'
 
 interface PropsCBOptions {
   children: React.ReactNode
@@ -10,7 +11,37 @@ interface PropsCBOptions {
 function ComboBoxOptions({ children, position = 'bottom' }: PropsCBOptions) {
   const { visibility } = useComboBoxContext()
 
-  return <>{visibility && <CBMenu $position={position}>{children}</CBMenu>}</>
+  const transitions = useTransition(visibility, {
+    from: {
+      opacity: 0,
+      y: position === 'bottom' ? '90%' : '-90%',
+    },
+    enter: {
+      opacity: 1,
+      y: position === 'bottom' ? '100%' : '-100%',
+      config: {
+        easing: easings.easeOutCubic,
+        duration: 200,
+      },
+    },
+    leave: {
+      opacity: 0,
+      y: position === 'bottom' ? '90%' : '-90%',
+      config: {
+        easing: easings.easeInCubic,
+        duration: 160,
+      },
+    },
+  })
+
+  return transitions(
+    (style, item) =>
+      item && (
+        <CBMenu as={animated.ul} style={style} $position={position}>
+          {children}
+        </CBMenu>
+      ),
+  )
 }
 
 interface PropsCBOption {

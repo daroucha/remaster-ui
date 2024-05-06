@@ -1,7 +1,7 @@
 const $motion = {
   duration: {
     default: '120ms',
-    slow: '300ms',
+    slow: '200ms',
     fast: '80ms',
   },
   curve: {

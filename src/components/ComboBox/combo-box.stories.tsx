@@ -30,7 +30,17 @@ export const Default = {
     const handleBlur = (event: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = event.target
 
-      if (value.toLowerCase() !== selectedPerson.toLowerCase()) {
+      const findValue = people.filter((person) => {
+        return person.toLowerCase().includes(value.toLowerCase())
+      })
+
+      if (findValue.length < 1) {
+        setQuery(selectedPerson)
+      }
+    }
+
+    const handleClose = (value: string) => {
+      if (value === '' && selectedPerson !== '') {
         setQuery(selectedPerson)
       }
     }
@@ -52,6 +62,7 @@ export const Default = {
       <ComboBox
         label="Label"
         tip="I'm a monster you created in your dad's memory"
+        onClose={handleClose}
       >
         <ComboBox.Input
           leading={<UserCircle />}

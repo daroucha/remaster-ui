@@ -10,15 +10,16 @@ import { StyledComboBox } from './styled-combo-box'
 import { PropsInput } from '../Field/input-props'
 import ComboBoxContext from './combo-box-context'
 import ComboBoxInput from './combo-box-input'
-import { useContext, useMemo, useRef, useState } from 'react'
+import { useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { ComboBoxOption, ComboBoxOptions } from './combo-box-options'
 import useClickOutside from '@/utils/useClickOutside'
 
 interface PropsComboBox extends PropsField, PropsInput {
   children: React.ReactNode
+  onClose?: (query: string) => void
 }
 
-function ComboBox({ disabled, label, tip, children }: PropsComboBox) {
+function ComboBox({ disabled, label, tip, children, onClose }: PropsComboBox) {
   const [visibility, setVisibility] = useState(false)
   const [query, setQuery] = useState('')
 
@@ -29,6 +30,12 @@ function ComboBox({ disabled, label, tip, children }: PropsComboBox) {
     () => ({ disabled, setQuery, visibility, setVisibility }),
     [disabled, setQuery, visibility, setVisibility],
   )
+
+  useEffect(() => {
+    if (!visibility && onClose) {
+      onClose(query)
+    }
+  }, [visibility])
 
   return (
     <ComboBoxContext.Provider value={value}>

@@ -34,6 +34,8 @@ const CBMenu = styled.ul<{ $position: string }>`
   list-style: none;
   left: ${$size.border.sm};
   margin: 0;
+  max-height: 300px;
+  overflow: auto;
   padding-inline: 0;
   padding-bottom: ${(props) =>
     props.$position === 'top'

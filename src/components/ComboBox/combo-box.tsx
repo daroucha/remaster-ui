@@ -6,20 +6,29 @@ import {
   FieldBaseTipArea,
   FieldBaseTip,
 } from '../Field/styled-field-base'
-import { StyledComboBox } from './style-combo-box'
+import { StyledComboBox } from './styled-combo-box'
 import { PropsInput } from '../Field/input-props'
 import ComboBoxContext from './combo-box-context'
 import ComboBoxInput from './combo-box-input'
-import { useContext, useMemo, useState } from 'react'
+import { useContext, useMemo, useRef, useState } from 'react'
+import { ComboBoxOption, ComboBoxOptions } from './combo-box-options'
+import useClickOutside from '@/utils/useClickOutside'
 
 interface PropsComboBox extends PropsField, PropsInput {
   children: React.ReactNode
 }
 
 function ComboBox({ disabled, label, tip, children }: PropsComboBox) {
+  const [visibility, setVisibility] = useState(false)
   const [query, setQuery] = useState('')
 
-  const value = useMemo(() => ({ disabled, setQuery }), [disabled, setQuery])
+  const comboBoxRef = useRef(null)
+  useClickOutside(comboBoxRef, () => setVisibility(false))
+
+  const value = useMemo(
+    () => ({ disabled, setQuery, visibility, setVisibility }),
+    [disabled, setQuery, visibility, setVisibility],
+  )
 
   return (
     <ComboBoxContext.Provider value={value}>
@@ -30,7 +39,7 @@ function ComboBox({ disabled, label, tip, children }: PropsComboBox) {
           </FieldBaseLegend>
         )}
 
-        <StyledComboBox>{children}</StyledComboBox>
+        <StyledComboBox ref={comboBoxRef}>{children}</StyledComboBox>
 
         {tip && (
           <FieldBaseTipArea>
@@ -55,5 +64,7 @@ export const useComboBoxContext = () => {
 }
 
 ComboBox.Input = ComboBoxInput
+ComboBox.Options = ComboBoxOptions
+ComboBox.Option = ComboBoxOption
 
 export default ComboBox

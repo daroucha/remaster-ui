@@ -31,11 +31,15 @@ function ComboBoxInput({
   placeholder,
   value,
 }: PropsComboBoxInput) {
-  const { disabled, setQuery } = useComboBoxContext()
+  const { disabled, visibility, setQuery, setVisibility } = useComboBoxContext()
 
   const comboBoxInputId = prefix + useId()
 
   const [caretDirection, setCaretDirection] = useState('show')
+
+  useEffect(() => {
+    setCaretDirection(visibility ? 'hide' : 'show')
+  }, [visibility])
 
   useEffect(() => {
     setQuery(value)
@@ -60,7 +64,11 @@ function ComboBoxInput({
           />
         )}
 
-        <IconButton size="small" leading={<Caret />} />
+        <IconButton
+          size="small"
+          leading={<Caret />}
+          onClick={() => setVisibility(!visibility)}
+        />
       </InputBaseTrailing>
 
       <InputBaseElement
@@ -69,7 +77,6 @@ function ComboBoxInput({
         disabled={disabled}
         id={comboBoxInputId}
         onBlur={(event) => {
-          setCaretDirection('show')
           if (onBlur) {
             onBlur(event)
           }
@@ -80,7 +87,7 @@ function ComboBoxInput({
           }
         }}
         onFocus={() => {
-          setCaretDirection('hide')
+          setVisibility(true)
         }}
         placeholder={placeholder}
         type="text"

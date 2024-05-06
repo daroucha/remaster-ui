@@ -4,7 +4,7 @@ import {
   AvatarText,
   AvatarIcon,
 } from './styled-avatar'
-import initials from '@/utils/initials'
+import useInitials from '@/utils/useInitials'
 
 interface PropsAvatar {
   alt?: string
@@ -15,7 +15,7 @@ interface PropsAvatar {
 }
 
 function Avatar({ alt, icon, size, src, text }: PropsAvatar) {
-  const slice = text ? initials(text) : null
+  const slice = text ? useInitials(text) : null
 
   return (
     <StyledAvatar $size={size}>

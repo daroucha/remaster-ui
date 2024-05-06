@@ -13,6 +13,7 @@ const StyledInputBase = styled(SansSerif)<{ $disabled?: boolean }>`
   opacity: ${(props) => (props.$disabled ? '60%' : '100%')};
   position: relative;
   width: 100%;
+  z-index: 2;
 `
 
 const InputBaseIcon = styled.div`

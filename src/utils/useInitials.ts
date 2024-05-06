@@ -1,4 +1,4 @@
-const initials = (value: string) => {
+const useInitials = (value: string) => {
   const regex = new RegExp(/(\p{L}{1})\p{L}+/, 'gu')
 
   let regexMatch = [...value.matchAll(regex)] || []
@@ -9,4 +9,4 @@ const initials = (value: string) => {
   return initials
 }
 
-export default initials
+export default useInitials

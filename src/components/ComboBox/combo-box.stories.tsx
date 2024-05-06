@@ -49,7 +49,10 @@ export const Default = {
     }
 
     return (
-      <ComboBox>
+      <ComboBox
+        label="Label"
+        tip="I'm a monster you created in your dad's memory"
+      >
         <ComboBox.Input
           leading={<UserCircle />}
           placeholder="Combo Box"
@@ -59,11 +62,16 @@ export const Default = {
           onClear={handleClear}
         />
 
-        {filteredPeople.map((person, index) => (
-          <div key={index} onClick={() => handleClick(person)}>
-            {person}
-          </div>
-        ))}
+        <ComboBox.Options position="bottom">
+          {filteredPeople.map((person, index) => (
+            <ComboBox.Option
+              key={index}
+              active={selectedPerson === person}
+              onClick={() => handleClick(person)}
+              text={person}
+            />
+          ))}
+        </ComboBox.Options>
       </ComboBox>
     )
   },

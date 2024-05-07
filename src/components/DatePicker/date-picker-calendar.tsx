@@ -7,7 +7,15 @@ interface PropsDatePickerCalendar {
   closeOnScroll?: boolean
   dateFormat?: string | string[]
   disabled?: boolean
+  endDate?: Date | null
+  excludeDates?: Date[]
+  fixedHeight?: boolean
+  leading?: React.ReactNode
   locale?: string
+  maxDate?: Date | null
+  maxTime?: Date | undefined
+  minDate?: Date | null
+  minTime?: Date | undefined
   onCalendarClose?: () => void
   onCalendarOpen?: () => void
   onChange?: (date: Date | null) => void
@@ -16,7 +24,8 @@ interface PropsDatePickerCalendar {
   selected?: Date | null
   selectsEnd?: boolean
   selectsStart?: boolean
-  leading?: React.ReactNode
+  showYearPicker?: boolean
+  startDate?: Date | null
 }
 
 function DatePickerCalendar(props: PropsDatePickerCalendar) {
@@ -25,7 +34,15 @@ function DatePickerCalendar(props: PropsDatePickerCalendar) {
     closeOnScroll,
     dateFormat,
     disabled,
+    endDate,
+    excludeDates,
+    fixedHeight,
+    leading,
     locale,
+    maxDate,
+    maxTime,
+    minDate,
+    minTime,
     onCalendarClose,
     onCalendarOpen,
     onChange,
@@ -34,18 +51,22 @@ function DatePickerCalendar(props: PropsDatePickerCalendar) {
     selected,
     selectsEnd,
     selectsStart,
-    leading,
+    showYearPicker,
+    startDate,
   } = props
 
   return (
     <ReactDatePicker
+      calendarClassName="master-datepicker"
       customInput={
         <DatePickerInput leading={leading} placeholder={placeholder} />
       }
       closeOnScroll={closeOnScroll}
       dateFormat={dateFormat}
       disabled={disabled}
-      selected={selected}
+      endDate={endDate}
+      excludeDates={excludeDates}
+      fixedHeight={fixedHeight}
       locale={locale}
       onCalendarClose={() => {
         if (onCalendarClose) {
@@ -67,9 +88,16 @@ function DatePickerCalendar(props: PropsDatePickerCalendar) {
           onSelect()
         }
       }}
+      maxDate={maxDate}
+      maxTime={maxTime}
+      minDate={minDate}
+      minTime={minTime}
       placeholderText={placeholder}
-      selectsStart={selectsStart}
+      selected={selected}
       selectsEnd={selectsEnd}
+      selectsStart={selectsStart}
+      showYearPicker={showYearPicker}
+      startDate={startDate}
     >
       {children}
     </ReactDatePicker>

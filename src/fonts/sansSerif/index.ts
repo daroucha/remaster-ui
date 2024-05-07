@@ -20,7 +20,7 @@ const FontTreatment = styled.span`
 
 const SansSerif = styled(FontTreatment)`
   @font-face {
-    font-family: CircularStd;
+    font-family: ${$primitives.typography.fontName.sans};
     font-weight: 300;
     font-style: normal;
     src: url(data:font/truetype;charset=utf-8;base64,${sansSerifBook})
@@ -28,7 +28,7 @@ const SansSerif = styled(FontTreatment)`
   }
 
   @font-face {
-    font-family: CircularStd;
+    font-family: ${$primitives.typography.fontName.sans};
     font-weight: 400;
     font-style: normal;
     src: url(data:font/truetype;charset=utf-8;base64,${sansSerifMedium})
@@ -36,7 +36,7 @@ const SansSerif = styled(FontTreatment)`
   }
 
   @font-face {
-    font-family: CircularStd;
+    font-family: ${$primitives.typography.fontName.sans};
     font-weight: 600;
     font-style: normal;
     src: url(data:font/truetype;charset=utf-8;base64,${sansSerifBold})
@@ -44,7 +44,7 @@ const SansSerif = styled(FontTreatment)`
   }
 
   @font-face {
-    font-family: CircularStd;
+    font-family: ${$primitives.typography.fontName.sans};
     font-weight: 700;
     font-style: normal;
     src: url(data:font/truetype;charset=utf-8;base64,${sansSerifBlack})

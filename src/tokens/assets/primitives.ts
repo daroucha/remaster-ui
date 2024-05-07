@@ -50,9 +50,13 @@ const $primitives = {
     },
   },
   typography: {
+    fontName: {
+      sans: 'masterCircular',
+      mono: 'masterInputMono',
+    },
     fontFamily: {
-      sans: 'CircularStd, -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif',
-      mono: 'InputMono',
+      sans: 'masterCircular, -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif',
+      mono: 'masterInputMono, SF Mono, Cascadia Code, mono',
     },
     fontWeight: {
       sans: {

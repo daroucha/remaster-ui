@@ -1,5 +1,5 @@
 import ReactDatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
+import './date-picker.css'
 import DatePickerInput from './date-picker-input'
 
 interface PropsDatePickerCalendar {
@@ -96,6 +96,7 @@ function DatePickerCalendar(props: PropsDatePickerCalendar) {
       selected={selected}
       selectsEnd={selectsEnd}
       selectsStart={selectsStart}
+      showPopperArrow={false}
       showYearPicker={showYearPicker}
       startDate={startDate}
     >

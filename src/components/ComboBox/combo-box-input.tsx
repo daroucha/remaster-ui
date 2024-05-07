@@ -54,6 +54,7 @@ function ComboBoxInput({
       <InputBaseTrailing>
         {value && (
           <IconButton
+            disabled={disabled}
             size="small"
             leading={<XCircle weight="fill" />}
             onClick={(event) => {
@@ -65,6 +66,7 @@ function ComboBoxInput({
         )}
 
         <IconButton
+          disabled={disabled}
           size="small"
           leading={<Caret />}
           onClick={() => setVisibility(!visibility)}

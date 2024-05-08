@@ -14,6 +14,7 @@ const StyledButtonBase = styled.button<{ disabled: boolean }>`
   display: inline-flex;
   flex-direction: row;
   gap: ${$space.gap.md};
+  justify-content: center;
   opacity: ${(props) => (props.disabled ? '60%' : '100%')};
   padding-block: ${$space.block.sm};
   padding-inline: ${$space.inline.md};

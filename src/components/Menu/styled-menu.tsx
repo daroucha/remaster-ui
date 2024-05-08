@@ -1,21 +1,43 @@
 import SansSerif from '@/fonts/sansSerif'
-import { $color, $primitives, $size, $space } from '@/tokens'
+import { $color, $primitives, $size, $space, $style } from '@/tokens'
 import styled from 'styled-components'
 
-const shadow =
-  '0px 51px 14px 0px rgba(0, 0, 0, 0.00), 0px 33px 13px 0px rgba(0, 0, 0, 0.01), 0px 18px 11px 0px rgba(0, 0, 0, 0.03), 0px 8px 8px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.06)'
-
 const StyledMenu = styled.div`
-  background: ${$color.background.elevation.secondary.light};
+  background-color: ${$color.background.elevation.tertiary.light};
   border-radius: ${$size.radius.md};
   box-shadow:
-    0 0 0 ${$size.border.sm} ${$color.border.default.secondary.light},
-    ${shadow};
+    0 0 0 ${$size.border.sm} ${$color.border.default.primary.light},
+    ${$style.shadow.md};
   box-sizing: border-box;
   color: ${$color.text.plain.secondary.light};
   display: inline-block;
   padding-block: ${$space.block.xxs};
+  position: relative;
   user-select: none;
+
+  &::after,
+  &::before {
+    border-radius: ${$size.radius.md};
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &::before {
+    background-image: url(${$style.noise});
+    opacity: 10%;
+    z-index: 2;
+  }
+
+  &::after {
+    background-color: ${$color.background.elevation.secondary.light};
+    backdrop-filter: blur(25px);
+    z-index: 1;
+  }
 `
 
 const StyledMenuItem = styled.div<{ $disabled?: boolean }>`
@@ -23,11 +45,17 @@ const StyledMenuItem = styled.div<{ $disabled?: boolean }>`
   color: inherit;
   display: block;
   flex-direction: column;
+  position: relative;
   width: 100%;
+  z-index: 3;
 `
 
-const MIContent = styled(SansSerif)<{ $disabled?: boolean }>`
+const MIContent = styled(SansSerif)<{ $active: boolean; $disabled?: boolean }>`
   align-items: center;
+  background: ${(props) =>
+    props.$active
+      ? $color.background.action.hover.neutral.light
+      : 'transparent'};
   box-sizing: border-box;
   color: inherit;
   cursor: ${(props) => (props.$disabled ? 'default' : 'pointer')};
@@ -45,7 +73,9 @@ const MIContent = styled(SansSerif)<{ $disabled?: boolean }>`
     background: ${(props) =>
       props.$disabled
         ? 'transparent'
-        : $color.background.action.hover.neutral.light};
+        : $color.background.action.hover.accent.light};
+    color: ${(props) =>
+      props.$disabled ? 'inherit' : $color.text.inverted.primary.light};
   }
 `
 
@@ -120,6 +150,17 @@ const MIDivider = styled.div`
   }
 `
 
+const MIChildren = styled.div`
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(
+    calc(100% - ${$space.inline.xxs}),
+    calc(${$space.block.xxs} * -1)
+  );
+`
+
 export {
   StyledMenu,
   StyledMenuItem,
@@ -131,4 +172,5 @@ export {
   MITitle,
   MIText,
   MIDivider,
+  MIChildren,
 }

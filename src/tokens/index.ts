@@ -10,5 +10,6 @@ import $color from './assets/colors'
 import $size from './assets/sizes'
 import $space from './assets/spaces'
 import $motion from './assets/motion'
+import $style from './assets/style'
 
-export { $primitives, $color, $size, $space, $motion }
+export { $primitives, $color, $size, $space, $motion, $style }

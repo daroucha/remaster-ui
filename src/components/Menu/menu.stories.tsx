@@ -9,9 +9,11 @@ import Menu from './menu'
 import MenuItem from './menu-item'
 
 type Options = {
+  children?: React.ReactNode
   disabled?: boolean
   divider?: boolean
   leading?: React.ReactNode
+  onClick?: () => void
   title: string
   text?: string
   trailing?: React.ReactNode | string
@@ -26,9 +28,13 @@ export default {
         {args.options.map((item: Options, index: number) => (
           <Menu.Item
             key={index}
+            children={item.children}
             disabled={item.disabled}
             divider={item.divider}
             leading={item.leading}
+            onClick={() => {
+              if (item.onClick) item.onClick()
+            }}
             title={item.title}
             text={item.text}
             trailing={item.trailing}
@@ -47,6 +53,7 @@ export const Default = {
         text: 'Option text goes here',
         trailing: '⌘ ⌥ F',
         divider: true,
+        onClick: () => console.log('Option 1'),
       },
       {
         title: 'Option 2',
@@ -55,21 +62,31 @@ export const Default = {
       {
         title: 'Option 3',
         trailing: <Check />,
+        onClick: () => console.log('Option 3'),
       },
       {
         title: 'Option 4',
         disabled: true,
         divider: true,
-      },
-      {
-        leading: <Image />,
-        title: 'Option 5',
-        trailing: <CaretRight />,
+        onClick: () => console.log('Option 4'),
       },
       {
         leading: <DotsThree />,
-        title: 'Option 6',
+        title: 'Option 5',
         trailing: <CaretRight />,
+        children: (
+          <Menu>
+            <Menu.Item title="Option A" />
+            <Menu.Item title="Option B" trailing={<CaretRight />}>
+              <Menu>
+                <Menu.Item title="Option I" />
+                <Menu.Item title="Option II" />
+                <Menu.Item title="Option III" />
+              </Menu>
+            </Menu.Item>
+            <Menu.Item title="Option C" />
+          </Menu>
+        ),
       },
     ],
   },

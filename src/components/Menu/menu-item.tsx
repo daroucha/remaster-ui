@@ -80,4 +80,5 @@ function MenuItem({
   )
 }
 
+export type { PropsMenuItem }
 export default MenuItem

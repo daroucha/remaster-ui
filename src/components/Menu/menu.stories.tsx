@@ -1,10 +1,4 @@
-import {
-  CaretRight,
-  Check,
-  DotsThree,
-  Image,
-  Plus,
-} from '@phosphor-icons/react'
+import { CaretRight, Check, DotsThree } from '@phosphor-icons/react'
 import Menu from './menu'
 import MenuItem from './menu-item'
 

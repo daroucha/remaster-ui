@@ -62,6 +62,29 @@ const $size = {
     md: $primitives.units['0.5x'],
     sm: '1px',
   },
+  breakpoint: {
+    mobile: {
+      default: 430,
+      md: 430,
+      sm: 320,
+    },
+    tablet: {
+      default: 744,
+      md: 1133,
+      sm: 744,
+    },
+    desktop: {
+      default: 1280,
+      lg: 1920,
+      md: 1728,
+      sm: 1280,
+    },
+  },
+  query: {
+    mobile: 'max-width: 430px',
+    tablet: '(min-width: 431px) and (max-width: 1133px)',
+    desktop: 'min-width: 1134px',
+  },
 }
 
 export default $size

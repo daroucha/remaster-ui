@@ -1,7 +1,7 @@
 import { StyledNL, NLContent, NLIcon, NLText } from './styled-navigation-link'
 
 interface PropsNavigationLink {
-  active: boolean
+  active?: boolean
   disabled?: boolean
   href?: string
   leading?: React.ReactNode

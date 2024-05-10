@@ -34,9 +34,10 @@ const borderRadius = (type: string) => {
 }
 
 const StyledCover = styled.picture<{
-  $type: string
-  $size?: number
+  $disabled?: boolean
   $hover?: boolean
+  $size?: number
+  $type: string
 }>`
   align-items: center;
   aspect-ratio: ${(props) => aspectRatio(props.$type)};

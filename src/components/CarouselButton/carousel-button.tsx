@@ -12,6 +12,8 @@ interface PropsCarouselButton {
   direction: 'prev' | 'next'
   disabled?: boolean
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  onMouseDown?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  onMouseUp?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
   size: 'small' | 'medium'
 }
 
@@ -19,6 +21,8 @@ function CarouselButton({
   direction,
   disabled,
   onClick,
+  onMouseDown,
+  onMouseUp,
   size,
 }: PropsCarouselButton) {
   const CarouselButtonId = prefix + useId()
@@ -37,6 +41,24 @@ function CarouselButton({
 
         if (onClick) {
           onClick(event)
+        }
+      }}
+      onMouseDown={(event) => {
+        if (disabled) {
+          event.preventDefault()
+        }
+
+        if (onMouseDown) {
+          onMouseDown(event)
+        }
+      }}
+      onMouseUp={(event) => {
+        if (disabled) {
+          event.preventDefault()
+        }
+
+        if (onMouseUp) {
+          onMouseUp(event)
         }
       }}
     >

@@ -1,8 +1,9 @@
 const $motion = {
   duration: {
+    fast: '80ms',
     default: '120ms',
     slow: '200ms',
-    fast: '80ms',
+    slower: '280ms',
   },
   curve: {
     cubic: 'cubic-bezier(0.645, 0.045, 0.355, 1)',

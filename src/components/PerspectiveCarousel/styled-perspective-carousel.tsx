@@ -61,8 +61,9 @@ const PCCoverFlow = styled.div`
 `
 
 const PCItem = styled.div`
+  align-items: center;
   cursor: pointer;
-  display: position;
+  display: flex;
   height: auto;
   left: 50%;
   margin-left: -9%;
@@ -70,8 +71,8 @@ const PCItem = styled.div`
   position: absolute;
   top: 50%;
   transform-style: preserve-3d;
-  transition-property: all;
   transition-duration: ${$motion.duration.slower};
+  transition-property: all;
   transition-timing-function: ${$motion.curve.sine};
   width: 17%;
 

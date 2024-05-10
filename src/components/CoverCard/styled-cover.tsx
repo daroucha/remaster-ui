@@ -56,12 +56,11 @@ const StyledCover = styled.picture<{
   transition-duration: ${$motion.duration.default};
   overflow: hidden;
 
-  img {
-    -webkit-user-drag: none;
-    max-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    user-select: none;
+  .image {
+    height: 100%;
+    opacity: ${(props) => (props.$disabled ? '60%' : '100%')};
+    transition: inherit;
+    width: 100%;
   }
 `
 

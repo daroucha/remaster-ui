@@ -1,11 +1,11 @@
 import { $color, $size } from '@/tokens'
 import styled from 'styled-components'
 
-const StyledImage = styled.div<{ $ratio?: string }>`
+const StyledImage = styled.div<{ $ratio?: string; $raw?: boolean }>`
   align-items: center;
-  aspect-ratio: ${(props) => (props.$ratio ? props.$ratio : 'none')};
+  aspect-ratio: ${(props) => (props.$ratio ? props.$ratio : 'auto')};
   background: ${$color.background.surface.secondary.light};
-  border-radius: ${$size.radius.lg};
+  border-radius: ${(props) => (props.$raw ? '0px' : $size.radius.lg)};
   color: ${$color.icon.plain.secondary.light};
   display: inline-flex;
   height: auto;

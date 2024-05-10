@@ -8,7 +8,12 @@ export default {
 export const Default = {
   args: {
     data: [
-      { src: '', coverType: 'bd', title: 'Title 1', text: 'Text goes here' },
+      {
+        src: 'https://static.wikia.nocookie.net/avp/images/a/af/Aliens_%282011_Blu-ray%29.jpg',
+        coverType: 'bd',
+        title: 'Title 1',
+        text: 'Text goes here',
+      },
       { src: '', coverType: 'bd', title: 'Title 2', text: 'Text goes here' },
       { src: '', coverType: 'bd', title: 'Title 3', text: 'Text goes here' },
       { src: '', coverType: 'bd', title: 'Title 4', text: 'Text goes here' },

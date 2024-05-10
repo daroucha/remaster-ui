@@ -6,11 +6,13 @@ import { SvgSpinner } from '@/icons'
 
 interface PropsImage {
   alt: string
+  className?: string
   ratio?: '1/1' | '3/2' | '4/3' | '16/9' | 'auto'
+  raw?: boolean
   src: string
 }
 
-function Image({ alt, ratio, src }: PropsImage) {
+function Image({ alt, className, ratio, raw, src }: PropsImage) {
   const [loading, setLoading] = useState(false)
   const [validation, setValidation] = useState<boolean | undefined>(false)
 
@@ -26,7 +28,7 @@ function Image({ alt, ratio, src }: PropsImage) {
   }, [src])
 
   return (
-    <StyledImage $ratio={ratio}>
+    <StyledImage $ratio={ratio} $raw={raw} className={className}>
       {loading || !validation ? (
         <ImageEmptyContent>
           {loading && <SvgSpinner />}

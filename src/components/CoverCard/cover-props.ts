@@ -1,10 +1,10 @@
 interface Cover {
-  alt?: string
+  alt: string
   className?: string
   disabled?: boolean
   hover?: boolean
   size?: number
-  src?: string
+  src: string
   style?: React.CSSProperties
   type: 'bd' | 'dvd' | 'collection'
   innerRef?: React.RefObject<HTMLElement> | undefined

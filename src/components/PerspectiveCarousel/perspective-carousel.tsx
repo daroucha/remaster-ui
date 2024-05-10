@@ -146,7 +146,12 @@ function PerspectiveCarousel({
                       setActive(index)
                     }}
                   >
-                    <Cover disabled={!isActive} type={item.coverType} />
+                    <Cover
+                      disabled={!isActive}
+                      type={item.coverType}
+                      src={item.src}
+                      alt={item.title}
+                    />
                   </PCItem>
                 )
               })}

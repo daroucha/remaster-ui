@@ -1,5 +1,6 @@
 import StyledCover from './styled-cover'
 import { PropsCover } from './cover-props'
+import Image from '../Image'
 
 function Cover({
   alt,
@@ -22,7 +23,7 @@ function Cover({
       ref={innerRef}
       style={style}
     >
-      {src && <img src={src} alt={alt} />}
+      <Image src={src} alt={alt} className="image" raw />
     </StyledCover>
   )
 }

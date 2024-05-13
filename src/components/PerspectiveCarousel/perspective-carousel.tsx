@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import { Cover } from '@/components/CoverCard'
 import CarouselButton from '@/components/CarouselButton'
 import {
@@ -9,6 +9,7 @@ import {
   PCCarouselContainer,
   PCCoverFlow,
   PCItem,
+  PCCoverFX,
   PCActiveItemTextArea,
   PCActiveItemContent,
   PCActiveItemTitle,
@@ -39,9 +40,10 @@ function PerspectiveCarousel({
   const minIndexPossible = 0
   const maxIndexPossible = data.length - 1
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (coverRef.current !== null) {
-      setCoverHeight(coverRef.current.clientHeight)
+      const { height } = coverRef.current.getBoundingClientRect()
+      setCoverHeight(height)
     }
   }, [])
 
@@ -151,7 +153,18 @@ function PerspectiveCarousel({
                       type={item.coverType}
                       src={item.src}
                       alt={item.title}
+                      hover={isActive}
                     />
+
+                    {isActive && (
+                      <PCCoverFX>
+                        <Cover
+                          type={item.coverType}
+                          src={item.src}
+                          alt={item.title}
+                        />
+                      </PCCoverFX>
+                    )}
                   </PCItem>
                 )
               })}

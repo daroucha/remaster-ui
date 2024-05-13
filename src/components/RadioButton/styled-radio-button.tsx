@@ -2,7 +2,7 @@ import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
 import styled from 'styled-components'
 
-const StyledCheckboxArea = styled.label<{ $disabled?: boolean }>`
+const StyledRadioButtonArea = styled.label<{ $disabled?: boolean }>`
   align-items: center;
   cursor: ${(props) => (props.$disabled ? 'default' : 'pointer')};
   display: flex;
@@ -11,14 +11,14 @@ const StyledCheckboxArea = styled.label<{ $disabled?: boolean }>`
   width: 100%;
 `
 
-const CheckboxInputArea = styled.div<{
+const RadioButtonInputArea = styled.div<{
   $disabled?: boolean
 }>`
   background: ${(props) =>
     props.$disabled
       ? $color.background.action.disabled.neutral.light
       : $color.background.surface.primary.light};
-  border-radius: ${$size.radius.sm};
+  border-radius: ${$size.radius.rounded};
   box-shadow:
     inset 0 0 0 ${$size.border.sm},
     ${$color.border.default.primary.light};
@@ -32,12 +32,9 @@ const CheckboxInputArea = styled.div<{
   width: ${$primitives.units['4.5x']};
 `
 
-const CheckboxInputMark = styled.div<{ $checked?: boolean }>`
+const RadioButtonInputMark = styled.div<{ $checked?: boolean }>`
   align-items: center;
-  color: ${(props) =>
-    props.$checked
-      ? $color.icon.inverted.primary.light
-      : $color.icon.plain.tertiary.light};
+  color: ${$color.icon.inverted.primary.light};
   display: flex;
   height: 100%;
   justify-content: center;
@@ -47,12 +44,12 @@ const CheckboxInputMark = styled.div<{ $checked?: boolean }>`
   width: 100%;
 
   svg {
-    height: ${$size.icon.xxs};
-    width: ${$size.icon.xxs};
+    height: ${$primitives.units['2.5x']};
+    width: ${$primitives.units['2.5x']};
   }
 `
 
-const CheckboxInput = styled.input.attrs({ type: 'checkbox' })`
+const RadioButtonInput = styled.input.attrs({ type: 'radio' })`
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -69,7 +66,7 @@ const CheckboxInput = styled.input.attrs({ type: 'checkbox' })`
   }
 `
 
-const CheckboxLabel = styled(SansSerif)<{ $checked?: boolean }>`
+const RadioButtonLabel = styled(SansSerif)<{ $checked?: boolean }>`
   color: ${(props) =>
     props.$checked
       ? $color.text.plain.primary.light
@@ -82,9 +79,9 @@ const CheckboxLabel = styled(SansSerif)<{ $checked?: boolean }>`
 `
 
 export {
-  StyledCheckboxArea,
-  CheckboxInputArea,
-  CheckboxInputMark,
-  CheckboxInput,
-  CheckboxLabel,
+  StyledRadioButtonArea,
+  RadioButtonInputArea,
+  RadioButtonInputMark,
+  RadioButtonInput,
+  RadioButtonLabel,
 }

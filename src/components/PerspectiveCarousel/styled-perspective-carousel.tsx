@@ -79,6 +79,35 @@ const PCItem = styled.div`
   picture {
     height: auto;
     width: 100%;
+    z-index: 2;
+  }
+`
+
+const PCCoverFX = styled.div`
+  animation-delay: ${$motion.duration.slower};
+  animation-duration: ${$motion.duration.slow};
+  animation-fill-mode: forwards;
+  animation-name: reveal;
+  display: block;
+  filter: blur(20px);
+  left: 0px;
+  opacity: 0%;
+  position: absolute;
+  top: 0px;
+  transform: translateY(8%) scale(94%);
+  transition-timing-function: ${$motion.curve.sine};
+  transition-duration: ${$motion.duration.default};
+  z-index: 0;
+
+  @keyframes reveal {
+    0% {
+      opacity: 0%;
+      transform: translateY(0%) scale(100%);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateY(8%) scale(94%);
+    }
   }
 `
 
@@ -140,6 +169,7 @@ export {
   PCCarouselContainer,
   PCCoverFlow,
   PCItem,
+  PCCoverFX,
   PCActiveItemTextArea,
   PCActiveItemContent,
   PCActiveItemTitle,

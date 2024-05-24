@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { $color, $primitives, $size, $space } from '@/tokens'
 import SansSerif from '@/fonts/sansSerif'
+import { $color, $primitives, $size, $space } from '@/tokens'
+import styled from 'styled-components'
 
 const StyledNL = styled.a<{
   $state?: boolean

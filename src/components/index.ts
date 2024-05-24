@@ -5,8 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-export * from '@/components/Avatar'
 export * from '@/components/ActionButton'
+export * from '@/components/Alert'
+export * from '@/components/Avatar'
 export * from '@/components/CarouselButton'
 export * from '@/components/Chip'
 export * from '@/components/CollectionCard'

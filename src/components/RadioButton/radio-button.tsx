@@ -19,6 +19,7 @@ import prefix from '@/utils/prefix'
 
 interface PropsRadioButton extends PropsField {
   checked?: boolean
+  name?: string
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
     data: { checked: boolean; id: string },
@@ -29,6 +30,7 @@ function RadioButton({
   checked,
   disabled = false,
   label,
+  name,
   onChange,
   text,
   tip,
@@ -54,6 +56,7 @@ function RadioButton({
             id={radioId}
             disabled={disabled}
             checked={checked}
+            name={name}
             onChange={(event) => {
               if (disabled) {
                 event.preventDefault()

@@ -31,6 +31,17 @@ const InputBaseIcon = styled.div`
   }
 `
 
+const InputBaseLeading = styled.div`
+  align-items: center;
+  box-sizing: border-box;
+  display: inline-flex;
+  height: 100%;
+  justify-content: flex-end;
+  left: 0;
+  padding: ${$space.inline.xxs};
+  position: absolute;
+`
+
 const InputBaseTrailing = styled.div`
   align-items: center;
   box-sizing: border-box;
@@ -74,6 +85,16 @@ const InputBaseElement = styled.input<{
     box-shadow: ${`inset 0 0 0 ${$size.border.md} ${$color.border.focus.primary.light}`};
     color: ${$color.text.plain.primary.light};
   }
+
+  &[type='number'] {
+    text-align: center;
+  }
 `
 
-export { StyledInputBase, InputBaseIcon, InputBaseTrailing, InputBaseElement }
+export {
+  StyledInputBase,
+  InputBaseIcon,
+  InputBaseLeading,
+  InputBaseTrailing,
+  InputBaseElement,
+}

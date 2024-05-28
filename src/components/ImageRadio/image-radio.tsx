@@ -1,5 +1,10 @@
 import prefix from '@/utils/prefix'
-import { IRImage, IRInput, StyledImageRadio } from './styled-image-radio'
+import {
+  IRImage,
+  IRImageArea,
+  IRInput,
+  StyledImageRadio,
+} from './styled-image-radio'
 import { useId } from 'react'
 import Image from '../Image/image'
 
@@ -44,7 +49,9 @@ function ImageRadio({
       />
 
       <IRImage htmlFor={imageRadioId}>
-        <Image src={src} alt={alt} />
+        <IRImageArea>
+          <Image src={src} alt={alt} />
+        </IRImageArea>
       </IRImage>
     </StyledImageRadio>
   )

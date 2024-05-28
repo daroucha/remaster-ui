@@ -18,23 +18,15 @@ const IRImage = styled.label`
   aspect-ratio: 1/1;
   background: ${$color.background.surface.primary.light};
   border-radius: ${$size.radius.rounded};
-  box-shadow: ${`inset 0 0 0 ${$size.border.sm} ${$color.border.default.secondary.light}`};
   cursor: inherit;
   display: flex;
   height: ${$primitives.units['12x']};
   justify-content: center;
-  object-fit: cover;
   opacity: inherit;
   position: relative;
   transition-duration: ${$motion.duration.default};
-  transition-timing-function: ${$motion.curve.sine};
+  transition-timing-function: ${$motion.curve.linear};
   width: ${$primitives.units['12x']};
-
-  > picture {
-    border-radius: inherit;
-    height: 100%;
-    z-index: 2;
-  }
 
   &::after {
     aspect-ratio: inherit;
@@ -55,6 +47,37 @@ const IRImage = styled.label`
   }
 `
 
+const IRImageArea = styled.div`
+  align-items: center;
+  aspect-ratio: inherit;
+  border-radius: inherit;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  object-fit: cover;
+  overflow: hidden;
+  z-index: 2;
+
+  &::before {
+    border-radius: inherit;
+    box-shadow: ${`inset 0 0 0 ${$size.border.sm} ${$color.border.default.primary.light}`};
+    content: '';
+    display: block;
+    height: 100%;
+    inset: 0px;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+
+  > picture {
+    height: 200%;
+    max-height: max-content;
+    max-width: max-content;
+    z-index: 1;
+  }
+`
+
 const IRInput = styled.input`
   display: none;
   opacity: 0;
@@ -72,4 +95,4 @@ const IRInput = styled.input`
   }
 `
 
-export { StyledImageRadio, IRImage, IRInput }
+export { StyledImageRadio, IRImage, IRImageArea, IRInput }

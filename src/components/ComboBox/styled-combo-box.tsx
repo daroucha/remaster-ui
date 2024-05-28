@@ -1,5 +1,5 @@
 import SansSerif from '@/fonts/sansSerif'
-import { $color, $motion, $primitives, $size, $space } from '@/tokens'
+import { $color, $primitives, $size, $space } from '@/tokens'
 import styled from 'styled-components'
 
 const StyledComboBox = styled.div`

@@ -52,8 +52,7 @@ const InputBaseElement = styled.input<{
   background: ${$color.background.surface.primary.light};
   border-radius: ${$size.radius.sm};
   border: none;
-  box-shadow: inset 0 0 0 ${$size.border.sm}
-    ${$color.border.default.secondary.light};
+  box-shadow: ${`inset 0 0 0 ${$size.border.sm} ${$color.border.default.secondary.light}`};
   box-sizing: border-box;
   color: inherit;
   font-family: ${$primitives.typography.fontFamily.sans};
@@ -72,8 +71,7 @@ const InputBaseElement = styled.input<{
   }
 
   &:focus {
-    box-shadow: inset 0 0 0 ${$size.border.md}
-      ${$color.border.focus.primary.light};
+    box-shadow: ${`inset 0 0 0 ${$size.border.md} ${$color.border.focus.primary.light}`};
     color: ${$color.text.plain.primary.light};
   }
 `

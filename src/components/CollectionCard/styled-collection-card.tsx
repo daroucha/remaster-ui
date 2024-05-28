@@ -14,8 +14,7 @@ const StyledCollectionCard = styled.div<{ $clickable: boolean }>`
   &::before {
     background: none;
     border-radius: inherit;
-    box-shadow: inset 0 0 0 ${$size.border.sm}
-      ${$color.border.default.secondary.light};
+    box-shadow: ${`inset 0 0 0 ${$size.border.sm} ${$color.border.default.secondary.light}`};
     content: '';
     display: block;
     height: 100%;

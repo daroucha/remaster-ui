@@ -1,7 +1,10 @@
 import { $color, $size } from '@/tokens'
 import styled from 'styled-components'
 
-const StyledImage = styled.div<{ $ratio?: string; $raw?: boolean }>`
+const StyledImage = styled.picture<{
+  $ratio?: string
+  $raw?: boolean
+}>`
   align-items: center;
   aspect-ratio: ${(props) => (props.$ratio ? props.$ratio : 'auto')};
   background: ${$color.background.surface.secondary.light};
@@ -21,6 +24,7 @@ const StyledImage = styled.div<{ $ratio?: string; $raw?: boolean }>`
   img {
     -webkit-user-drag: none;
     height: 100%;
+    image-rendering: -webkit-optimize-contrast;
     object-fit: cover;
     position: relative;
     width: 100%;

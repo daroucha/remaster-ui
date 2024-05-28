@@ -2,7 +2,7 @@ import { Warning } from '@phosphor-icons/react'
 import Alert from './alert'
 
 export default {
-  title: 'Alert',
+  title: '🚨 Feedback/Alert',
   component: Alert,
 }
 

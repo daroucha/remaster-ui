@@ -17,9 +17,11 @@ const StyledInputBase = styled(SansSerif)<{ $disabled?: boolean }>`
 `
 
 const InputBaseIcon = styled.div`
+  align-self: flex-start;
   color: inherit;
   display: block;
   height: ${$size.icon.xs};
+  margin-block: ${$space.block.xs};
   margin-inline: ${$space.inline.sm};
   width: ${$size.icon.xs};
 
@@ -71,6 +73,7 @@ const InputBaseElement = styled.input<{
   outline: none;
   padding-left: ${(props) =>
     props.$leading ? $primitives.units['9x'] : $space.inline.md};
+  padding-block: ${$space.block.sm};
   padding-right: ${(props) =>
     props.$trailing ? $primitives.units['10x'] : $space.inline.md};
   width: 100%;
@@ -86,6 +89,11 @@ const InputBaseElement = styled.input<{
 
   &[type='number'] {
     text-align: center;
+  }
+
+  &.textarea_type {
+    height: auto;
+    min-height: ${$primitives.units['9x']};
   }
 `
 

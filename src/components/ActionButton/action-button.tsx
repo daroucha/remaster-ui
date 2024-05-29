@@ -23,6 +23,7 @@ interface PropsActionButton {
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
   size: 'small' | 'medium'
   text: string
+  type?: string
   trailing?: React.ReactNode
   variant: 'primary' | 'secondary' | 'tertiary'
 }
@@ -34,6 +35,7 @@ function ActionButton({
   onClick,
   size,
   text,
+  type,
   trailing,
   variant,
 }: PropsActionButton) {
@@ -54,6 +56,7 @@ function ActionButton({
           onClick(event)
         }
       }}
+      type={type}
     >
       {loading && (
         <ButtonLoadingBase>

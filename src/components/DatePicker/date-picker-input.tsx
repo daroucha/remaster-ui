@@ -3,6 +3,7 @@ import {
   InputBaseIcon,
   InputBaseTrailing,
   InputBaseElement,
+  InputBaseLeading,
 } from '../Field/styled-input-base'
 import { forwardRef, useId } from 'react'
 import prefix from '@/utils/prefix'
@@ -38,7 +39,11 @@ const DatePickerInput = forwardRef(function DPInput(
 
   return (
     <StyledInputBase $disabled={disabled}>
-      {leading && <InputBaseIcon>{leading}</InputBaseIcon>}
+      {leading && (
+        <InputBaseLeading>
+          <InputBaseIcon>{leading}</InputBaseIcon>
+        </InputBaseLeading>
+      )}
 
       <InputBaseTrailing>
         <IconButton

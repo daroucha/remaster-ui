@@ -3,6 +3,7 @@ import {
   InputBaseIcon,
   InputBaseTrailing,
   InputBaseElement,
+  InputBaseLeading,
 } from '../Field/styled-input-base'
 import { PropsInput } from '../Field/input-props'
 import { useEffect, useId, useState } from 'react'
@@ -49,7 +50,11 @@ function ComboBoxInput({
 
   return (
     <StyledInputBase $disabled={disabled}>
-      {leading && <InputBaseIcon>{leading}</InputBaseIcon>}
+      {leading && (
+        <InputBaseLeading>
+          <InputBaseIcon>{leading}</InputBaseIcon>
+        </InputBaseLeading>
+      )}
 
       <InputBaseTrailing>
         {value && (

@@ -20,9 +20,7 @@ const InputBaseIcon = styled.div`
   color: inherit;
   display: block;
   height: ${$size.icon.xs};
-  left: 0;
-  margin-left: ${$space.inline.md};
-  position: absolute;
+  margin-inline: ${$space.inline.sm};
   width: ${$size.icon.xs};
 
   svg {

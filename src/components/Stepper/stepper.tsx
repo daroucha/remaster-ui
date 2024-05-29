@@ -72,7 +72,9 @@ function Stepper({
     <StyledFieldBase>
       {label && (
         <FieldBaseLegend as="legend">
-          <FieldBaseLabel>{label}</FieldBaseLabel>
+          <FieldBaseLabel as="label" htmlFor={stepperId}>
+            {label}
+          </FieldBaseLabel>
         </FieldBaseLegend>
       )}
 

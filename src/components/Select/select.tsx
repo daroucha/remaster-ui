@@ -5,7 +5,11 @@ import {
   FieldBaseTipArea,
   FieldBaseTip,
 } from '../Field/styled-field-base'
-import { InputBaseIcon, InputBaseTrailing } from '../Field/styled-input-base'
+import {
+  InputBaseIcon,
+  InputBaseLeading,
+  InputBaseTrailing,
+} from '../Field/styled-input-base'
 import { StyledSelect, StyledSelectBase } from './styled-select'
 import { useId } from 'react'
 import { PropsField } from '../Field/field-props'
@@ -49,7 +53,11 @@ function Select({
       )}
 
       <StyledSelectBase $disabled={disabled}>
-        {leading && <InputBaseIcon>{leading}</InputBaseIcon>}
+        {leading && (
+          <InputBaseLeading>
+            <InputBaseIcon>{leading}</InputBaseIcon>
+          </InputBaseLeading>
+        )}
 
         <InputBaseTrailing>
           <IconButton

@@ -47,6 +47,7 @@ function SegmentedControlTab({
         id={sCTabId}
         type="radio"
         name="segmented-control-option"
+        disabled={disabled}
         value={value}
         onChange={(event) => {
           setActive(value)

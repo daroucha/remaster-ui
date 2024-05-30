@@ -13,7 +13,7 @@ import {
   CheckboxInput,
   CheckboxLabel,
 } from './styled-checkbox'
-import { useId } from 'react'
+import { useId, useState } from 'react'
 import { PropsField } from '../Field/field-props'
 import prefix from '@/utils/prefix'
 
@@ -27,7 +27,7 @@ interface PropsCheckbox extends PropsField {
 }
 
 function Checkbox({
-  checked,
+  checked = false,
   disabled = false,
   label,
   onChange,
@@ -37,6 +37,8 @@ function Checkbox({
   value,
 }: PropsCheckbox) {
   const checkboxId = prefix + useId()
+
+  const [isChecked, setChecked] = useState(checked)
 
   return (
     <StyledFieldBase>
@@ -48,18 +50,20 @@ function Checkbox({
 
       <StyledCheckboxArea $disabled={disabled}>
         <CheckboxInputArea $disabled={disabled}>
-          <CheckboxInputMark $checked={checked}>
+          <CheckboxInputMark $checked={isChecked}>
             <Check weight="bold" />
           </CheckboxInputMark>
 
           <CheckboxInput
             id={checkboxId}
             disabled={disabled}
-            checked={checked}
+            checked={isChecked}
             onChange={(event) => {
               if (disabled) {
                 event.preventDefault()
               }
+
+              setChecked(event.target.checked)
 
               if (onChange) {
                 onChange(event, {
@@ -72,7 +76,7 @@ function Checkbox({
           />
         </CheckboxInputArea>
 
-        {text && <CheckboxLabel $checked={checked}>{text}</CheckboxLabel>}
+        {text && <CheckboxLabel $checked={isChecked}>{text}</CheckboxLabel>}
       </StyledCheckboxArea>
 
       {tip && (

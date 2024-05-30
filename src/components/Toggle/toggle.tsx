@@ -27,7 +27,7 @@ interface PropsToggle extends PropsField {
 }
 
 function Toggle({
-  checked,
+  checked = false,
   disabled = false,
   label,
   onChange,

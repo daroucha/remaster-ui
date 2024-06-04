@@ -9,13 +9,13 @@ This package includes components, icons (by Phosphor) & tokens.
 ## Installation
 
 ```bash
-npm i master-ui @phosphor-icons/react
+npm i @daroucha/master-ui @phosphor-icons/react
 ```
 
 ## How to use
 
 ```tsx
-import { ActionButton } from 'master-ui'
+import { ActionButton } from '@daroucha/master-ui'
 import { Heart } from '@phosphor-icons/react'
 
 export default Page() {

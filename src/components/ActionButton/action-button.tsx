@@ -46,6 +46,7 @@ function ActionButton({
   return (
     <Button
       id={ActionButtonId}
+      className={`${prefix}action-button-${variant}`}
       disabled={disabled}
       onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         if (disabled) {

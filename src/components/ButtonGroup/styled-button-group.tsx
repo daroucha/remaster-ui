@@ -1,4 +1,4 @@
-import { $color, $size, $style } from '@/tokens'
+import { $color, $size, $space, $style } from '@/tokens'
 import styled from 'styled-components'
 
 const border = `inset 0 0 0 ${$size.border.sm} ${$color.border.default.secondary.light}`
@@ -24,10 +24,33 @@ const BGItem = styled.div`
   height: auto;
   justify-content: inherit;
 
+  .master-dropdown-button,
+  .master-action-button-tertiary,
+  .master-icon-button {
+    box-shadow: none;
+    height: 100%;
+  }
+
   &:not(:last-child) {
     border-right-width: ${$size.border.sm};
     border-right-style: solid;
     border-right-color: ${$color.border.default.primary.light};
+
+    .master-dropdown-button,
+    .master-action-button-tertiary,
+    .master-icon-button {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+
+  &:not(:first-child) {
+    .master-dropdown-button,
+    .master-action-button-tertiary,
+    .master-icon-button {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
   }
 `
 

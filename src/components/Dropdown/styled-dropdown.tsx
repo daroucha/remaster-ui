@@ -13,6 +13,7 @@ const StyledDropdownMenu = styled.div`
   position: absolute;
   right: 0;
   transform: translateY(100%);
+  z-index: 999;
 `
 
 export { StyledDropdown, StyledDropdownMenu }

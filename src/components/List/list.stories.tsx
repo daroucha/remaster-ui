@@ -20,7 +20,7 @@ export const Default = {
 
 export const CoverList = {
   args: {
-    leading: <Cover type="bd" />,
+    leading: <Cover type="bd" alt="" src="" />,
     title: 'List title',
     text: 'List text goes here',
     children: <ArrowRight />,

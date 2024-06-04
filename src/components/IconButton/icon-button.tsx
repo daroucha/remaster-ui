@@ -1,4 +1,6 @@
+import prefix from '@/utils/prefix'
 import { IBIcon, IBText, StyledIconButton } from './styled-icon-button'
+import { useId } from 'react'
 
 interface PropsIconButton {
   active?: boolean
@@ -17,8 +19,12 @@ function IconButton({
   size,
   text,
 }: PropsIconButton) {
+  const iconButtonId = prefix + useId()
+
   return (
     <StyledIconButton
+      id={iconButtonId}
+      className={`${prefix}icon-button`}
       disabled={disabled}
       $active={active}
       onClick={(event) => {

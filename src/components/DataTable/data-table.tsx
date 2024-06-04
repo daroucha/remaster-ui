@@ -4,12 +4,12 @@ import TableCell from './table-cell'
 import TableContext from './table-context'
 import TableRow from './table-row'
 
-interface PropsTable {
+interface PropsDataTable {
   children?: React.ReactNode
   variant?: 'default' | 'zebra'
 }
 
-function Table({ children, variant = 'default' }: PropsTable) {
+function DataTable({ children, variant = 'default' }: PropsDataTable) {
   const value = {
     variant,
   }
@@ -33,9 +33,9 @@ export const useTableContext = () => {
   return context
 }
 
-Table.Body = StyledTableBody
-Table.Row = TableRow
-Table.Cell = TableCell
+DataTable.Body = StyledTableBody
+DataTable.Row = TableRow
+DataTable.Cell = TableCell
 
-export type { PropsTable }
-export default Table
+export type { PropsDataTable }
+export default DataTable

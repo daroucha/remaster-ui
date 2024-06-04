@@ -1,16 +1,16 @@
 import { Disc, DotsThree } from '@phosphor-icons/react'
 import ButtonGroup from '../ButtonGroup'
-import Table, { PropsTable } from './table'
+import DataTable, { PropsDataTable } from './data-table'
 import ActionButton from '../ActionButton'
-import List from '../List'
+import List from '../DataList'
 import { Cover } from '../CoverCard'
 import { Bluray, Dvd } from '@/icons'
 import { createElement } from 'react'
 import Dropdown from '../Dropdown'
 
 export default {
-  title: '📊 Data Presentation/Table',
-  component: Table,
+  title: '📊 Data Presentation/DataTable',
+  component: DataTable,
 }
 
 interface MediaObjectType {
@@ -77,13 +77,13 @@ export const Default = {
   args: {
     variant: 'zebra',
   },
-  render: ({ variant }: PropsTable) => {
+  render: ({ variant }: PropsDataTable) => {
     return (
-      <Table variant={variant}>
-        <Table.Body>
+      <DataTable variant={variant}>
+        <DataTable.Body>
           {data.map((row: any, key: number) => (
-            <Table.Row key={key}>
-              <Table.Cell>
+            <DataTable.Row key={key}>
+              <DataTable.Cell>
                 <List
                   title={row.title}
                   text={row.year}
@@ -95,21 +95,21 @@ export const Default = {
                     />
                   }
                 />
-              </Table.Cell>
+              </DataTable.Cell>
 
-              <Table.Cell>
+              <DataTable.Cell>
                 {createElement(mediaComponent[row.media].component)}
                 {mediaComponent[row.media].label}
-              </Table.Cell>
+              </DataTable.Cell>
 
-              <Table.Cell>{row.package}</Table.Cell>
+              <DataTable.Cell>{row.package}</DataTable.Cell>
 
-              <Table.Cell>
+              <DataTable.Cell>
                 <Disc />
                 {row.discs}
-              </Table.Cell>
+              </DataTable.Cell>
 
-              <Table.Cell align="end" width="auto">
+              <DataTable.Cell align="end" width="auto">
                 <ButtonGroup variant="primary">
                   <ActionButton size="small" text="Open" variant="tertiary" />
 
@@ -121,11 +121,11 @@ export const Default = {
                     </Dropdown.Menu>
                   </Dropdown>
                 </ButtonGroup>
-              </Table.Cell>
-            </Table.Row>
+              </DataTable.Cell>
+            </DataTable.Row>
           ))}
-        </Table.Body>
-      </Table>
+        </DataTable.Body>
+      </DataTable>
     )
   },
 }

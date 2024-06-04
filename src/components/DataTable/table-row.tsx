@@ -1,5 +1,5 @@
 import { StyledTableRow } from './styled-table'
-import { useTableContext } from './table'
+import { useTableContext } from './data-table'
 
 interface PropsTableRow {
   children: React.ReactNode

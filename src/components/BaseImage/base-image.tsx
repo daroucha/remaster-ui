@@ -12,7 +12,7 @@ interface PropsImage {
   src: string
 }
 
-function Image({ alt, className, ratio, raw, src }: PropsImage) {
+function BaseImage({ alt, className, ratio, raw, src }: PropsImage) {
   const [loading, setLoading] = useState(false)
   const [validation, setValidation] = useState<boolean | undefined>(false)
 
@@ -45,4 +45,4 @@ function Image({ alt, className, ratio, raw, src }: PropsImage) {
 }
 
 export type { PropsImage }
-export default Image
+export default BaseImage

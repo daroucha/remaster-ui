@@ -11,7 +11,7 @@ interface PropsLink {
   trailing?: boolean
 }
 
-function Link({
+function NavLink({
   children,
   disabled,
   href,
@@ -46,4 +46,4 @@ function Link({
 }
 
 export type { PropsLink }
-export default Link
+export default NavLink

@@ -14,7 +14,7 @@ interface PropsList {
   text?: string
 }
 
-function List({ children, leading, title, text }: PropsList) {
+function DataList({ children, leading, title, text }: PropsList) {
   return (
     <StyledList>
       <ListMain>
@@ -33,4 +33,4 @@ function List({ children, leading, title, text }: PropsList) {
 }
 
 export type { PropsList }
-export default List
+export default DataList

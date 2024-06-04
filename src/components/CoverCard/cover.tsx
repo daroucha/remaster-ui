@@ -1,6 +1,6 @@
 import StyledCover from './styled-cover'
 import { PropsCover } from './cover-props'
-import Image from '../Image'
+import Image from '../BaseImage'
 
 function Cover({
   alt,

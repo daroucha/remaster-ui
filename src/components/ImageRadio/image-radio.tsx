@@ -6,7 +6,7 @@ import {
   StyledImageRadio,
 } from './styled-image-radio'
 import { useId } from 'react'
-import Image from '../Image/image'
+import Image from '../BaseImage/base-image'
 
 interface PropsImageRadio {
   alt: string

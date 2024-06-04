@@ -1,8 +1,8 @@
-import Image from './image'
+import BaseImage from './base-image'
 
 export default {
-  title: '🖼️ Icons and Imagens/Image',
-  component: Image,
+  title: '🖼️ Icons and Imagens/BaseImage',
+  component: BaseImage,
 }
 
 export const Default = {

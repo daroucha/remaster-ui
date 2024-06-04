@@ -31,7 +31,6 @@ function Checkbox({
   disabled = false,
   label,
   onChange,
-  indeterminate = false,
   text,
   tip,
   value,

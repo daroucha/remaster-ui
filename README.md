@@ -1,8 +1,10 @@
+![master-ui.png](./meta/master-ui.png)
+
 # Master UI
 
 Master UI is a module that provides a set of React components built with [Styled Components](https://styled-components.com/) to help you build beautiful user interfaces.
 
-This package includes components, icons & tokens.
+This package includes components, icons (by Phosphor) & tokens.
 
 ## Installation
 
@@ -10,11 +12,23 @@ This package includes components, icons & tokens.
 npm i master-ui
 ```
 
+## How to use
+
+```tsx
+import { ActionButton, Heart } from 'master-ui'
+
+export default Page() {
+  return <ActionButton variant="primary" text="Button" leading={<Heart />} />
+}
+```
+
 ## Credits
 
 - [facebook/react](https://github.com/facebook/react)
 - [styled-components/styled-components](https://github.com/styled-components/styled-components)
 - [phosphor-icons/react](https://github.com/phosphor-icons/react)
+- [Hacker0x01/react-datepicker](https://github.com/Hacker0x01/react-datepicker)
+- [pmndrs/react-spring](https://github.com/pmndrs/react-spring)
 
 ## Storybook
 

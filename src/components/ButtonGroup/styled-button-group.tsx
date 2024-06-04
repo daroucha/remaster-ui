@@ -1,4 +1,4 @@
-import { $color, $size, $space, $style } from '@/tokens'
+import { $color, $size, $style } from '@/tokens'
 import styled from 'styled-components'
 
 const border = `inset 0 0 0 ${$size.border.sm} ${$color.border.default.secondary.light}`

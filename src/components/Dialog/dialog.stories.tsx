@@ -19,7 +19,11 @@ export default {
         />
 
         <Dialog
-          {...args}
+          actions={args.actions}
+          use-divider={args.useDivider}
+          title={args.title}
+          text={args.text}
+          leading={args.leading}
           visibility={visibility}
           onDismiss={() => setVisibility(false)}
         >

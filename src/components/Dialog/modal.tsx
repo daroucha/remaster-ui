@@ -2,7 +2,6 @@ import {
   animated,
   easings,
   useChain,
-  useSpring,
   useSpringRef,
   useTransition,
 } from '@react-spring/web'

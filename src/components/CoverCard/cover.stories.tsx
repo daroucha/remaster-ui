@@ -19,9 +19,9 @@ export const Default = {
 
 export const Stack = () => (
   <CoverStack>
-    <Cover type="bd" size={size} />
-    <Cover type="bd" size={size} />
-    <Cover type="bd" size={size} />
-    <Cover type="bd" size={size} />
+    <Cover alt="" src="" type="bd" size={size} />
+    <Cover alt="" src="" type="bd" size={size} />
+    <Cover alt="" src="" type="bd" size={size} />
+    <Cover alt="" src="" type="bd" size={size} />
   </CoverStack>
 )

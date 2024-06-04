@@ -74,4 +74,5 @@ ComboBox.Input = ComboBoxInput
 ComboBox.Options = ComboBoxOptions
 ComboBox.Option = ComboBoxOption
 
+export type { PropsComboBox }
 export default ComboBox

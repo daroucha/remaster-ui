@@ -5,7 +5,16 @@ import { User } from '@phosphor-icons/react'
 export default {
   title: '📝 Form and Inputs/DatePicker',
   component: DatePicker,
-  render: ({ disabled, placeholder, leading, ...args }) => {
+  render: ({
+    disabled,
+    placeholder,
+    leading,
+    ...args
+  }: {
+    disabled: boolean
+    placeholder: string
+    leading: React.ReactNode
+  }) => {
     const [startDate, setStartDate] = useState(new Date())
 
     return (
@@ -13,7 +22,7 @@ export default {
         <DatePicker.Calendar
           disabled={disabled}
           selected={startDate}
-          onChange={(date) => setStartDate(date)}
+          onChange={(date: any) => setStartDate(date)}
           leading={leading}
           placeholder={placeholder}
         ></DatePicker.Calendar>

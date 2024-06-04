@@ -5,7 +5,15 @@ import DropdownButton from './dropdown-button'
 export default {
   title: '🖲️ Buttons/DropdownButton',
   component: DropdownButton,
-  render: ({ text, disabled, leading }) => {
+  render: ({
+    text,
+    disabled,
+    leading,
+  }: {
+    text: string
+    disabled: boolean
+    leading: React.ReactNode
+  }) => {
     return (
       <Dropdown>
         <Dropdown.Button text={text} disabled={disabled} leading={leading} />

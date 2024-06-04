@@ -1,11 +1,11 @@
 import { UserCircle } from '@phosphor-icons/react'
-import ComboBox from './combo-box'
+import ComboBox, { PropsComboBox } from './combo-box'
 import { useState } from 'react'
 
 export default {
   title: '📝 Form and Inputs/ComboBox',
   component: ComboBox,
-  render: ({ placeholder, ...args }) => {
+  render: ({ placeholder, ...args }: PropsComboBox) => {
     const people = [
       'Durward Reynolds',
       'Kenton Towne',

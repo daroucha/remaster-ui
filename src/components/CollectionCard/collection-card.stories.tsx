@@ -12,10 +12,10 @@ export const Default = {
   args: {
     children: (
       <CoverStack>
-        <Cover type="bd" />
-        <Cover type="bd" />
-        <Cover type="bd" />
-        <Cover type="bd" />
+        <Cover alt="" src="" type="bd" />
+        <Cover alt="" src="" type="bd" />
+        <Cover alt="" src="" type="bd" />
+        <Cover alt="" src="" type="bd" />
       </CoverStack>
     ),
     leading: <Avatar size={20} text="Card" />,

@@ -42,8 +42,10 @@ export const Password = {
 
     const handleClick = () => setType(type === 'password' ? 'text' : 'password')
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      console.log(input)
       setInput(event.target.value)
+    }
 
     const Icon = components[type]
 

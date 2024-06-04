@@ -8,6 +8,7 @@
 const $style = {
   shadow: {
     md: '0px 51px 14px 0px rgba(0, 0, 0, 0.00), 0px 33px 13px 0px rgba(0, 0, 0, 0.01), 0px 18px 11px 0px rgba(0, 0, 0, 0.03), 0px 8px 8px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.06)',
+    sm: '0px 5px 2px 0px rgba(0, 0, 0, 0.00), 0px 3px 1px 0px rgba(0, 0, 0, 0.01), 0px 2px 1px 0px rgba(0, 0, 0, 0.02), 0px 1px 1px 0px rgba(0, 0, 0, 0.04)',
   },
 
   noise:

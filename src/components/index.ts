@@ -8,6 +8,7 @@
 export * from '@/components/ActionButton'
 export * from '@/components/Alert'
 export * from '@/components/Avatar'
+export * from '@/components/ButtonGroup'
 export * from '@/components/CarouselButton'
 export * from '@/components/Chip'
 export * from '@/components/CollectionCard'

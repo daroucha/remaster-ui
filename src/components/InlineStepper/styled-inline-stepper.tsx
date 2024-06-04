@@ -15,13 +15,6 @@ const StyledInlineStepper = styled.div<{
   opacity: ${(props) => (props.$disabled ? '60%' : '100%')};
   padding-block: ${$space.block.xxs};
   padding-inline: ${$space.inline.xxs};
-
-  &:hover {
-    background: ${(props) =>
-      props.$disabled
-        ? 'inherit'
-        : $color.background.action.hover.neutral.light};
-  }
 `
 
 const ISIcon = styled.button<{

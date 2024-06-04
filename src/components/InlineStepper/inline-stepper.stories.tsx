@@ -1,7 +1,7 @@
 import InlineStepper, { PropsInlineStepper } from './inline-stepper'
 
 export default {
-  title: 'InlineStepper',
+  title: '📝 Form and Inputs/InlineStepper',
   component: InlineStepper,
 }
 

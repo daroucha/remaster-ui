@@ -1,6 +1,6 @@
 {
   "name": "master-ui",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "type": "module",
   "description": "UI library for front-end developement based on React",

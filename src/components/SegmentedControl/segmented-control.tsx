@@ -1,0 +1,43 @@
+import { useContext, useState } from 'react'
+import { StyledSegmentedControl } from './styled-segmented-control'
+import SegmentedControlContext from './segmented-control-context'
+import SegmentedControlTab from './segmented-control-tab'
+
+interface PropsSegmentedControl {
+  children: React.ReactNode
+  defaultValue?: string | number
+  disabled?: boolean
+}
+
+function SegmentedControl({
+  children,
+  defaultValue = '',
+  disabled,
+}: PropsSegmentedControl) {
+  const [active, setActive] = useState<string | number>(defaultValue)
+
+  const value = { disabled, active, setActive }
+
+  return (
+    <SegmentedControlContext.Provider value={value}>
+      <StyledSegmentedControl>{children}</StyledSegmentedControl>
+    </SegmentedControlContext.Provider>
+  )
+}
+
+export const useSegmentedControlContext = () => {
+  const context = useContext(SegmentedControlContext)
+
+  if (!context) {
+    throw new Error(
+      `SegmentedControl compound components cannot be rendered outside the SegmentedControl component`,
+    )
+  }
+
+  return context
+}
+
+SegmentedControl.Tab = SegmentedControlTab
+
+export type { PropsSegmentedControl }
+export default SegmentedControl

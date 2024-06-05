@@ -12,7 +12,8 @@ dist
 dist-ssr
 *.local
 *.tgz
-*.npmrc
+
+.npmrc
 
 # Editor directories and files
 .vscode

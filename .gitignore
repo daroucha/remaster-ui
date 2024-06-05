@@ -11,8 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
-.tgz
-.npmrc
+*.tgz
+*.npmrc
 
 # Editor directories and files
 .vscode

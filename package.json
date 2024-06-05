@@ -35,7 +35,7 @@
   ],
   "publishConfig": {
     "access": "public",
-    "@daroucha:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
     "dev": "vite",

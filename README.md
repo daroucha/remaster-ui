@@ -1,21 +1,21 @@
-![master-ui.png](./meta/master-ui.png)
+![remaster-ui.png](./meta/remaster-ui.png)
 
-# Master UI
+# Remaster UI
 
-Master UI is a module that provides a set of React components built with [Styled Components](https://styled-components.com/) to help you build beautiful user interfaces.
+Remaster UI is a module that provides a set of React components built with [Styled Components](https://styled-components.com/) to help you build beautiful user interfaces.
 
 This package includes components, icons (by Phosphor) & tokens.
 
 ## Installation
 
 ```bash
-npm i master-ui-react @phosphor-icons/react
+npm i remaster-ui @phosphor-icons/react
 ```
 
 ## How to use
 
 ```tsx
-import { ActionButton } from 'master-ui-react'
+import { ActionButton } from 'remaster-ui'
 import { Heart } from '@phosphor-icons/react'
 
 export default Page() {

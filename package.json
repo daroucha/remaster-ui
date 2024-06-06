@@ -1,12 +1,12 @@
 {
-  "name": "master-ui-react",
+  "name": "remaster-ui",
   "private": false,
   "version": "1.0.0",
   "type": "module",
-  "description": "UI library for front-end developement based on React",
+  "description": "UI library for front-end development based on React",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/daroucha/master-ui.git"
+    "url": "git+https://github.com/daroucha/remaster-ui.git"
   },
   "keywords": [
     "ui",
@@ -17,9 +17,9 @@
   "author": "Daniel Aroucha",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/daroucha/master-ui/issues"
+    "url": "https://github.com/daroucha/remaster-ui/issues"
   },
-  "homepage": "https://github.com/daroucha/master-ui#readme",
+  "homepage": "https://github.com/daroucha/remaster-ui#readme",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -34,8 +34,7 @@
     "/dist"
   ],
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   },
   "scripts": {
     "dev": "vite",

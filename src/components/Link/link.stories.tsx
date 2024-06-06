@@ -1,9 +1,9 @@
 import { Compass } from '@phosphor-icons/react'
-import NavLink from './nav-link'
+import Link from './link'
 
 export default {
-  title: '🧭 Navigation/NavLink',
-  component: NavLink,
+  title: '🧭 Navigation/Link',
+  component: Link,
 }
 
 export const Default = {

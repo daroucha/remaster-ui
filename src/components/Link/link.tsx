@@ -1,5 +1,10 @@
 import { CaretRight } from '@phosphor-icons/react'
-import { LinkContent, LinkIcon, LinkText, StyledLink } from './styled-link'
+import {
+  LinkContent,
+  LinkIcon,
+  LinkText,
+  StyledLink,
+} from './styled-link'
 
 interface PropsLink {
   children: string | React.ReactNode
@@ -11,7 +16,7 @@ interface PropsLink {
   trailing?: boolean
 }
 
-function NavLink({
+function Link({
   children,
   disabled,
   href,
@@ -38,7 +43,9 @@ function NavLink({
 
       {trailing && (
         <LinkIcon>
-          <CaretRight weight={size === 'small' ? 'regular' : 'bold'} />
+          <CaretRight
+            weight={size === 'small' ? 'regular' : 'bold'}
+          />
         </LinkIcon>
       )}
     </StyledLink>
@@ -46,4 +53,4 @@ function NavLink({
 }
 
 export type { PropsLink }
-export default NavLink
+export default Link

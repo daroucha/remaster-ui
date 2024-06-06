@@ -1,3 +1,4 @@
+import Avatar from '../Avatar'
 import NavigationLink from './navigation-link'
 import { Heart, ArrowRight } from '@phosphor-icons/react'
 
@@ -14,5 +15,15 @@ export const Default = {
     size: 'small',
     text: 'Navigation Link',
     trailing: <ArrowRight />,
+  },
+}
+
+export const WithAvatar = {
+  args: {
+    active: false,
+    disabled: false,
+    leading: <Avatar text="John Doe" />,
+    size: 'small',
+    text: 'Navigation Link',
   },
 }

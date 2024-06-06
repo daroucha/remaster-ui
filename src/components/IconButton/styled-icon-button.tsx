@@ -39,13 +39,14 @@ const StyledIconButton = styled.button<{
 `
 
 const IBIcon = styled.div<{ $size: string }>`
+  aspect-ratio: 1/1;
   align-items: center;
   color: inherit;
   display: flex;
-  height: ${(props) =>
+  min-height: ${(props) =>
     props.$size === 'medium' ? $size.icon.md : $size.icon.xs};
   justify-content: center;
-  width: ${(props) =>
+  min-width: ${(props) =>
     props.$size === 'medium' ? $size.icon.md : $size.icon.xs};
 
   svg {

@@ -50,7 +50,7 @@ const NLIcon = styled.div`
   display: block;
   flex-grow: 0;
   flex-shrink: 0;
-  height: ${$size.icon.xs};
+  min-height: ${$size.icon.xs};
 `
 
 const NLText = styled(SansSerif)<{

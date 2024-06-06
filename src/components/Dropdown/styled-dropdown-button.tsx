@@ -8,6 +8,7 @@ const StyledDropdownButton = styled.button<{
 }>`
   -moz-appearance: none;
   -webkit-appearance: none;
+  align-items: center;
   appearance: none;
   background: ${(props) =>
     props.$active
@@ -38,11 +39,12 @@ const StyledDropdownButton = styled.button<{
 `
 
 const DBIcon = styled.div`
+  aspect-ratio: 1/1;
   display: block;
   flex-grow: 0;
   flex-shrink: 0;
-  height: ${$size.icon.xs};
-  width: ${$size.icon.xs};
+  min-height: ${$size.icon.xs};
+  min-width: ${$size.icon.xs};
 
   svg {
     height: 100%;

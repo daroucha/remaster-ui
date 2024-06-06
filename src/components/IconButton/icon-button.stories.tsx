@@ -1,5 +1,6 @@
 import { BoundingBox } from '@phosphor-icons/react'
 import IconButton from './icon-button'
+import Avatar from '../Avatar'
 
 export default {
   title: '🖲️ Buttons/IconButton',
@@ -11,6 +12,16 @@ export const Default = {
     active: false,
     disabled: false,
     leading: <BoundingBox />,
+    size: 'small',
+    text: 'Text',
+  },
+}
+
+export const WithAvatar = {
+  args: {
+    active: false,
+    disabled: false,
+    leading: <Avatar text="John Doe" />,
     size: 'small',
     text: 'Text',
   },

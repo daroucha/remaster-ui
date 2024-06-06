@@ -61,11 +61,19 @@ const DBContent = styled(SansSerif)`
   gap: ${$space.gap.xs};
 `
 
-const DBText = styled.span`
+const DBText = styled.span<{
+  $size?: 'small' | 'medium'
+}>`
   color: inherit;
-  font-size: ${$size.type.fontSize.text.sm};
+  font-size: ${(props) =>
+    props.$size === 'medium'
+      ? $size.type.fontSize.text.md
+      : $size.type.fontSize.text.sm};
   font-weight: ${$primitives.typography.fontWeight.sans.regular};
-  line-height: ${$size.type.lineHeight.text.sm};
+  line-height: ${(props) =>
+    props.$size === 'medium'
+      ? $size.type.lineHeight.text.md
+      : $size.type.lineHeight.text.sm};
 `
 
 const DBCaret = styled.div<{ $position?: boolean }>`

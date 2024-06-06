@@ -1,9 +1,9 @@
 import type { PropsIcon } from '@/icons/types'
 import IconBase from '@/icons/lib/IconBase'
-import weights from '@/icons/lib/Collection/defs-collection'
+import weights from '@/icons/lib/DtsMA/defs-dtsma'
 
-function Collection(props: PropsIcon) {
+function DtsMA(props: PropsIcon) {
   return <IconBase weights={weights} {...props} />
 }
 
-export default Collection
+export default DtsMA

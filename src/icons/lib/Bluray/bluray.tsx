@@ -1,9 +1,9 @@
 import type { PropsIcon } from '@/icons/types'
 import IconBase from '@/icons/lib/IconBase'
-import weights from '@/icons/lib/Collection/defs-collection'
+import weights from '@/icons/lib/Bluray/defs-bluray'
 
-function Collection(props: PropsIcon) {
+function Bluray(props: PropsIcon) {
   return <IconBase weights={weights} {...props} />
 }
 
-export default Collection
+export default Bluray

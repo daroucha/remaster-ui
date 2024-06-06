@@ -27,3 +27,15 @@ export const WithAvatar = {
     text: 'Navigation Link',
   },
 }
+
+export const AsButton = {
+  args: {
+    as: 'button',
+    active: false,
+    disabled: false,
+    leading: <Heart />,
+    size: 'small',
+    text: 'Navigation Link',
+    trailing: <ArrowRight />,
+  },
+}

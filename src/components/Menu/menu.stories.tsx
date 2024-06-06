@@ -34,6 +34,8 @@ export default {
             trailing={item.trailing}
           />
         ))}
+
+        <Menu.Item as="button" title="As Button" />
       </Menu>
     )
   },

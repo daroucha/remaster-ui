@@ -16,3 +16,15 @@ export const Default = {
     trailing: true,
   },
 }
+
+export const AsButton = {
+  args: {
+    as: 'button',
+    children: 'Link',
+    disabled: false,
+    href: '#',
+    leading: <Compass />,
+    size: 'small',
+    trailing: true,
+  },
+}

@@ -26,3 +26,14 @@ export const WithAvatar = {
     text: 'Text',
   },
 }
+
+export const AsLink = {
+  args: {
+    as: 'a',
+    active: false,
+    disabled: false,
+    leading: <BoundingBox />,
+    size: 'small',
+    text: 'Text',
+  },
+}

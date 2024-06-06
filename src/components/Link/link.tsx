@@ -6,7 +6,11 @@ import {
   StyledLink,
 } from './styled-link'
 
-interface PropsLink {
+type PolymorphicAsProp<E extends React.ElementType> = {
+  as?: E
+}
+
+interface PropsLink extends PolymorphicAsProp<React.ElementType> {
   children: string | React.ReactNode
   disabled?: boolean
   href?: string
@@ -17,6 +21,7 @@ interface PropsLink {
 }
 
 function Link({
+  as,
   children,
   disabled,
   href,
@@ -24,16 +29,19 @@ function Link({
   onClick,
   size,
   trailing,
+  ...restProps
 }: PropsLink) {
   return (
     <StyledLink
-      $disabled={disabled}
+      disabled={disabled}
+      as={as}
       href={!disabled && href ? href : undefined}
       onClick={() => {
         if (!disabled && onClick) {
           onClick()
         }
       }}
+      {...restProps}
     >
       <LinkContent>
         {leading && <LinkIcon>{leading}</LinkIcon>}

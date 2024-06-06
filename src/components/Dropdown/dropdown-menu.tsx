@@ -9,7 +9,10 @@ interface PropsDropdownMenu {
   position?: 'bottom' | 'top'
 }
 
-function DropdownMenu({ children, position = 'bottom' }: PropsDropdownMenu) {
+function DropdownMenu({
+  children,
+  position = 'bottom',
+}: PropsDropdownMenu) {
   const { visibility } = useDropdownContext()
 
   const transition = useTransition(visibility, {
@@ -41,11 +44,12 @@ function DropdownMenu({ children, position = 'bottom' }: PropsDropdownMenu) {
         <StyledDropdownMenu as={animated.div} style={props}>
           <Menu>{children}</Menu>
         </StyledDropdownMenu>
-      ),
+      )
   )
 }
 
 function DropdownItem({
+  as,
   children,
   disabled,
   divider,
@@ -59,6 +63,7 @@ function DropdownItem({
 
   return (
     <MenuItem
+      as={as}
       children={children}
       disabled={disabled}
       divider={divider}

@@ -12,7 +12,11 @@ import {
   StyledMenuItem,
 } from './styled-menu'
 
-interface PropsMenuItem {
+type PolymorphicAsProp<E extends React.ElementType> = {
+  as?: E
+}
+
+interface PropsMenuItem extends PolymorphicAsProp<React.ElementType> {
   children?: React.ReactNode
   disabled?: boolean
   divider?: boolean
@@ -24,6 +28,7 @@ interface PropsMenuItem {
 }
 
 function MenuItem({
+  as,
   children,
   disabled,
   divider,
@@ -32,13 +37,14 @@ function MenuItem({
   title,
   text,
   trailing,
+  ...restProps
 }: PropsMenuItem) {
   const [subMenu, setSubMenu] = useState(false)
 
   return (
     <StyledMenuItem onMouseLeave={() => setSubMenu(false)}>
       <MIContent
-        as="div"
+        as={as}
         $active={subMenu}
         $disabled={disabled}
         onClick={() => {
@@ -47,6 +53,7 @@ function MenuItem({
           }
         }}
         onMouseEnter={() => setSubMenu(true)}
+        {...restProps}
       >
         <MILine>
           <MIMainArea>

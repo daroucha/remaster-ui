@@ -1,17 +1,28 @@
-import { StyledNL, NLContent, NLIcon, NLText } from './styled-navigation-link'
+import {
+  StyledNL,
+  NLContent,
+  NLIcon,
+  NLText,
+} from './styled-navigation-link'
 
-interface PropsNavigationLink {
+type PolymorphicAsProp<E extends React.ElementType> = {
+  as?: E
+}
+
+interface PropsNavigationLink
+  extends PolymorphicAsProp<React.ElementType> {
   active?: boolean
   disabled?: boolean
   href?: string
   leading?: React.ReactNode
-  onClick?: (event: React.MouseEvent<Element>) => void
+  onClick?: (event: React.MouseEvent) => void
   size: 'small' | 'medium'
   text: string
   trailing?: React.ReactNode
 }
 
 function NavigationLink({
+  as,
   active,
   disabled,
   href,
@@ -20,13 +31,16 @@ function NavigationLink({
   size,
   text,
   trailing,
+  ...restProps
 }: PropsNavigationLink) {
   return (
     <StyledNL
       $state={active}
       $size={size}
       $disabled={disabled}
-      onClick={(event) => {
+      disabled={disabled}
+      as={as}
+      onClick={(event: React.MouseEvent) => {
         if (disabled) {
           event.preventDefault()
         }
@@ -36,6 +50,7 @@ function NavigationLink({
         }
       }}
       href={href}
+      {...restProps}
     >
       <NLContent>
         {leading && <NLIcon>{leading}</NLIcon>}

@@ -13,4 +13,6 @@ import DtsMa from './assets/dts-ma.svg?react'
 import Dvd from './assets/dvd.svg?react'
 import SvgSpinner from './assets/spinner.svg?react'
 
-export { Bluray, DtsMa, DolbyTrueHd, Dvd, SvgSpinner }
+import Collection from './lib/Collection/collection'
+
+export { Bluray, DtsMa, DolbyTrueHd, Dvd, SvgSpinner, Collection }

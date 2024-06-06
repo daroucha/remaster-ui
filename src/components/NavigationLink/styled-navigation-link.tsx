@@ -51,6 +51,11 @@ const NLIcon = styled.div`
   flex-grow: 0;
   flex-shrink: 0;
   min-height: ${$size.icon.xs};
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
 `
 
 const NLText = styled(SansSerif)<{

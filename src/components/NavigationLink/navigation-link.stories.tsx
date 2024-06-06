@@ -1,3 +1,4 @@
+import { Collection } from '@/icons'
 import Avatar from '../Avatar'
 import NavigationLink from './navigation-link'
 import { Heart, ArrowRight } from '@phosphor-icons/react'
@@ -33,7 +34,7 @@ export const AsButton = {
     as: 'button',
     active: false,
     disabled: false,
-    leading: <Heart />,
+    leading: <Collection />,
     size: 'small',
     text: 'Navigation Link',
     trailing: <ArrowRight />,

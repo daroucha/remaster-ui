@@ -1,3 +1,4 @@
+import prefix from '@/utils/prefix'
 import { PBar, StyledProgressBar } from './styled-progress-bar'
 
 interface PropsProgressBar {
@@ -5,9 +6,15 @@ interface PropsProgressBar {
   type: 'default' | 'bleed'
 }
 
-function ProgressBar({ progress, type = 'default' }: PropsProgressBar) {
+function ProgressBar({
+  progress,
+  type = 'default',
+}: PropsProgressBar) {
   return (
-    <StyledProgressBar $type={type}>
+    <StyledProgressBar
+      $type={type}
+      className={`${prefix}progress-bar`}
+    >
       <PBar $type={type} style={{ width: progress + '%' }} />
     </StyledProgressBar>
   )

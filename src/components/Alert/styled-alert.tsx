@@ -29,7 +29,8 @@ const AlertIcon = styled.div<{ $closable?: boolean }>`
   flex-shrink: 0;
   height: ${$size.icon.sm};
   justify-content: center;
-  padding-block: ${(props) => (props.$closable ? $space.block.xxs : '0')};
+  padding-block: ${(props) =>
+    props.$closable ? $space.block.xxs : '0'};
   width: ${$size.icon.xs};
 
   svg {
@@ -44,6 +45,7 @@ const AlertContent = styled(SansSerif)`
   display: flex;
   flex-direction: column;
   gap: ${$space.gap.xs};
+  width: -webkit-fill-available;
 `
 
 const AlertTitleContainer = styled.div`
@@ -95,6 +97,10 @@ const AlertTimer = styled.div`
     100% {
       opacity: 100%;
     }
+  }
+
+  .master-progress-bar {
+    width: 100%;
   }
 `
 

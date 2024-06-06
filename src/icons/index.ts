@@ -9,10 +9,10 @@
 
 import SvgSpinner from './assets/spinner.svg?react'
 
-import Bluray from '@/icons/lib/Bluray/bluray'
-import Collection from '@/icons/lib/Collection/collection'
-import DolbyTrueHd from '@/icons/lib/DolbyTrueHd/dolbytruehd'
-import DtsMA from '@/icons/lib/DtsMA/dtsma'
-import Dvd from '@/icons/lib/Dvd/dvd'
+import Bluray from '@/icons/lib/Bluray'
+import Collection from '@/icons/lib/Collection'
+import DolbyTrueHd from '@/icons/lib/DolbyTrueHd'
+import DtsMA from '@/icons/lib/DtsMA'
+import Dvd from '@/icons/lib/Dvd'
 
 export { Bluray, Collection, DolbyTrueHd, DtsMA, Dvd, SvgSpinner }

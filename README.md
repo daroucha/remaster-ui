@@ -2,7 +2,7 @@
 
 # Remaster UI
 
-Remaster UI is a module that provides a set of React components built with [Styled Components](https://styled-components.com/) to help you build beautiful user interfaces.
+Remaster UI is a module that provides a set of React components built with [@emotion](https://emotion.sh/docs/styled) to help you build beautiful user interfaces.
 
 This package includes components, icons (by Phosphor) & tokens.
 
@@ -26,7 +26,7 @@ export default Page() {
 ## Credits
 
 - [facebook/react](https://github.com/facebook/react)
-- [styled-components/styled-components](https://github.com/styled-components/styled-components)
+- [emotion-js/emotion](https://github.com/emotion-js/emotion)
 - [phosphor-icons/react](https://github.com/phosphor-icons/react)
 - [Hacker0x01/react-datepicker](https://github.com/Hacker0x01/react-datepicker)
 - [pmndrs/react-spring](https://github.com/pmndrs/react-spring)

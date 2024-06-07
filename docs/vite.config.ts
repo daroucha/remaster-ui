@@ -11,10 +11,6 @@ export default defineConfig({
         __dirname,
         '../node_modules/@phosphor-icons/react/dist/index.cjs'
       ),
-      'styled-components': path.resolve(
-        __dirname,
-        '../node_modules/styled-components/dist/styled-components.cjs.js'
-      ),
     },
   },
   plugins: [react()],

@@ -16,3 +16,5 @@
 
 - Add size prop to DropdownButton ([3aa4ccb](https://github.com/daroucha/remaster-ui/commit/3aa4ccbc2ff4a59f7d14c61b805cbe2a16806fbc))
 - New Icon components ([4a2a649](https://github.com/daroucha/remaster-ui/commit/4a2a649eb01838421d746cf4b75b8fb0140585ac))
+- Migrate to [@emotion](https://emotion.sh/docs/styled) ([e53ea23](https://github.com/daroucha/remaster-ui/commit/e53ea2359e23188dc3b496e9df04bb834a54e37a))
+- Add ThemeProvider ([94bfc17](https://github.com/daroucha/remaster-ui/commit/94bfc177830c618a9c6600014a3d695195c5e2d9))

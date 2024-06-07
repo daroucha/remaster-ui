@@ -1,5 +1,5 @@
 import { $color, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const shadow =
   '0px 5px 2px 0px rgba(0, 0, 0, 0.00), 0px 3px 1px 0px rgba(0, 0, 0, 0.01), 0px 2px 1px 0px rgba(0, 0, 0, 0.02), 0px 1px 1px 0px rgba(0, 0, 0, 0.04)'

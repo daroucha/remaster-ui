@@ -1,24 +1,24 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledNL = styled.a<{
   $state?: boolean
   $size: string
-  $disabled?: boolean
+  disabled?: boolean
 }>`
   background: transparent;
   border-radius: ${$size.radius.sm};
   color: ${(props) =>
-    props.$disabled
+    props.disabled
       ? $color.text.plain.tertiary.light
       : props.$state
         ? $color.text.action.default.accent.light
         : $color.text.action.default.neutral.light};
-  cursor: ${(props) => (props.$disabled ? 'default' : 'pointer')};
+  cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   display: inline-flex;
   height: auto;
-  opacity: ${(props) => (props.$disabled ? '60%' : '100%')};
+  opacity: ${(props) => (props.disabled ? '60%' : '100%')};
   padding-block: ${$space.block.sm};
   padding-inline: ${(props) =>
     props.$size === 'medium' ? $space.inline.lg : $space.inline.sm};
@@ -26,11 +26,11 @@ const StyledNL = styled.a<{
 
   &:hover {
     background: ${(props) =>
-      props.$disabled
+      props.disabled
         ? 'transparent'
         : $color.background.action.hover.neutral.light};
     color: ${(props) =>
-      props.$disabled
+      props.disabled
         ? $color.text.plain.tertiary.light
         : $color.text.action.hover.neutral.light};
   }

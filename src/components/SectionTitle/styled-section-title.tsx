@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledSectionTitle = styled.div`
   align-items: flex-start;

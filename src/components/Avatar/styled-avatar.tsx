@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { $color, $primitives, $size } from '@/tokens'
 import SansSerif from '@/fonts/sansSerif'
 
@@ -8,13 +8,15 @@ const StyledAvatar = styled.div<{ $size?: number }>`
   background: ${$color.background.surface.secondary.light};
   border-radius: ${$size.radius.rounded};
   display: flex;
-  height: ${(props) => (props.$size ? props.$size + 'px' : $size.icon.md)};
+  height: ${(props) =>
+    props.$size ? props.$size + 'px' : $size.icon.md};
   min-height: ${$size.icon.xs};
   min-width: ${$size.icon.xs};
   justify-content: center;
   overflow: hidden;
   position: relative;
-  width: ${(props) => (props.$size ? props.$size + 'px' : $size.icon.md)};
+  width: ${(props) =>
+    props.$size ? props.$size + 'px' : $size.icon.md};
 `
 
 const AvatarImage = styled.img`

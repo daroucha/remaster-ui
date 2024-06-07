@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledTab = styled.div`
   display: flex;
@@ -84,9 +84,12 @@ const TCIndicator = styled.div<{
   $active: boolean
 }>`
   background: ${(props) =>
-    props.$active ? 'currentColor' : $color.border.default.secondary.light};
+    props.$active
+      ? 'currentColor'
+      : $color.border.default.secondary.light};
   display: block;
-  height: ${(props) => (props.$active ? $size.border.md : $size.border.sm)};
+  height: ${(props) =>
+    props.$active ? $size.border.md : $size.border.sm};
   width: 100%;
 `
 

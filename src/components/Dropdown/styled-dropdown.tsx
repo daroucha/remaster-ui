@@ -1,5 +1,5 @@
 import { $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledDropdown = styled.div`
   display: inline-flex;

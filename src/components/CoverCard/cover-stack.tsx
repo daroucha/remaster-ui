@@ -1,5 +1,5 @@
 import { $color, $motion } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const CoverStack = styled.div`
   align-items: center;
@@ -14,30 +14,30 @@ const CoverStack = styled.div`
     transition-duration: ${$motion.duration.default};
     transition-timing-function: ${$motion.curve.cubic};
 
-    &:nth-child(n):not(:first-child) {
+    &:nth-of-type(n):not(:first-of-type) {
       margin-left: -20%;
     }
   }
 
   &:hover {
     picture {
-      &:nth-child(2) {
+      &:nth-of-type(2) {
         margin-left: -12%;
       }
 
-      &:nth-child(3) {
+      &:nth-of-type(3) {
         margin-left: -16%;
       }
 
-      &:nth-child(4) {
+      &:nth-of-type(4) {
         margin-left: -20%;
       }
 
-      &:nth-child(n + 1):not(
-          :first-child,
-          :nth-child(2),
-          :nth-child(3),
-          :nth-child(4)
+      &:nth-of-type(n + 1):not(
+          :first-of-type,
+          :nth-of-type(2),
+          :nth-of-type(3),
+          :nth-of-type(4)
         ) {
         margin-left: -22%;
       }

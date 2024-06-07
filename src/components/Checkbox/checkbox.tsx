@@ -22,7 +22,7 @@ interface PropsCheckbox extends PropsField {
   indeterminate?: boolean
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
-    data: { checked: boolean; id: string },
+    data: { checked: boolean; id: string }
   ) => void
 }
 
@@ -54,6 +54,7 @@ function Checkbox({
           </CheckboxInputMark>
 
           <CheckboxInput
+            type="checkbox"
             id={checkboxId}
             disabled={disabled}
             checked={isChecked}
@@ -75,7 +76,9 @@ function Checkbox({
           />
         </CheckboxInputArea>
 
-        {text && <CheckboxLabel $checked={isChecked}>{text}</CheckboxLabel>}
+        {text && (
+          <CheckboxLabel $checked={isChecked}>{text}</CheckboxLabel>
+        )}
       </StyledCheckboxArea>
 
       {tip && (

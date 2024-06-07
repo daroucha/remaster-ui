@@ -8,16 +8,19 @@ interface PropsCBOptions {
   position: 'top' | 'bottom'
 }
 
-function ComboBoxOptions({ children, position = 'bottom' }: PropsCBOptions) {
+function ComboBoxOptions({
+  children,
+  position = 'bottom',
+}: PropsCBOptions) {
   const { visibility } = useComboBoxContext()
 
   const transitions = useTransition(visibility, {
     from: {
-      opacity: 0,
+      opacity: 0 as any,
       y: position === 'bottom' ? '90%' : '-90%',
     },
     enter: {
-      opacity: 1,
+      opacity: 1 as any,
       y: position === 'bottom' ? '100%' : '-100%',
       config: {
         easing: easings.easeOutCubic,
@@ -25,7 +28,7 @@ function ComboBoxOptions({ children, position = 'bottom' }: PropsCBOptions) {
       },
     },
     leave: {
-      opacity: 0,
+      opacity: 0 as any,
       y: position === 'bottom' ? '90%' : '-90%',
       config: {
         easing: easings.easeInCubic,
@@ -40,7 +43,7 @@ function ComboBoxOptions({ children, position = 'bottom' }: PropsCBOptions) {
         <CBMenu as={animated.ul} style={style} $position={position}>
           {children}
         </CBMenu>
-      ),
+      )
   )
 }
 

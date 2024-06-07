@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space, $motion } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledAlert = styled.div<{ $timer?: boolean }>`
   align-items: flex-start;

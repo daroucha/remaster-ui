@@ -10,16 +10,24 @@ export default {
 
 export const Default = {
   args: {
-    children: (
-      <CoverStack>
-        <Cover alt="" src="" type="bd" />
-        <Cover alt="" src="" type="bd" />
-        <Cover alt="" src="" type="bd" />
-        <Cover alt="" src="" type="bd" />
-      </CoverStack>
-    ),
     leading: <Avatar size={20} text="Card" />,
     title: 'Card title',
     text: 'Text',
+  },
+  render: ({ ...args }) => {
+    return (
+      <CollectionCard
+        title={args.title}
+        text={args.text}
+        leading={args.leading}
+      >
+        <CoverStack>
+          <Cover alt="" src="" type="bd" />
+          <Cover alt="" src="" type="bd" />
+          <Cover alt="" src="" type="bd" />
+          <Cover alt="" src="" type="bd" />
+        </CoverStack>
+      </CollectionCard>
+    )
   },
 }

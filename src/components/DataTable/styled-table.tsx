@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledTable = styled(SansSerif)`
   -webkit-border-horizontal-spacing: 0px;
@@ -24,7 +24,7 @@ const StyledTableRow = styled.tr<{
   display: table-row;
   width: 100%;
 
-  &:nth-child(even) {
+  &:nth-of-type(even) {
     td {
       background: ${(props) =>
         props.$variant === 'zebra'
@@ -47,12 +47,14 @@ const StyledTableCell = styled.td<{
   height: 100%;
   line-height: ${$size.type.lineHeight.text.md};
   padding-block: ${$space.block.sm};
-  text-align: ${(props) => (props.$align === 'end' ? 'right' : 'left')};
+  text-align: ${(props) =>
+    props.$align === 'end' ? 'right' : 'left'};
   width: ${(props) => (props.$width === 'auto' ? '1%' : 'auto')};
-  white-space: ${(props) => (props.$width === 'auto' ? 'nowrap' : 'normal')};
+  white-space: ${(props) =>
+    props.$width === 'auto' ? 'nowrap' : 'normal'};
   vertical-align: middle;
 
-  &:first-child {
+  &:first-of-type {
     border-bottom-left-radius: ${$size.radius.md};
     border-top-left-radius: ${$size.radius.md};
     padding-left: ${$space.inline.sm};

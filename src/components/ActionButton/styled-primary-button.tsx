@@ -1,8 +1,10 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { StyledButtonBase } from './styled-button-base'
 import { $color } from '@/tokens'
 
-const StyledPrimaryButton = styled(StyledButtonBase)<{ disabled: boolean }>`
+const StyledPrimaryButton = styled(StyledButtonBase)<{
+  disabled: boolean
+}>`
   background: ${(props) =>
     props.disabled
       ? $color.background.action.disabled.accent.light

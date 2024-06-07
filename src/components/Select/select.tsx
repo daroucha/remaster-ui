@@ -26,7 +26,7 @@ interface OptionType {
 interface PropsSelect extends PropsField {
   leading?: React.ReactNode
   name?: string
-  onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void
+  onChange?: (event: React.ChangeEvent) => void
   options: OptionType[]
   placeholder?: string
 }
@@ -73,7 +73,7 @@ function Select({
           $trailing={true}
           disabled={disabled}
           id={selectId}
-          onChange={(event) => {
+          onChange={(event: React.ChangeEvent) => {
             if (!disabled && onChange) {
               onChange(event)
             }
@@ -83,7 +83,11 @@ function Select({
           name={name}
         >
           {options.map((option, i) => (
-            <option key={i} value={option.value} selected={option.selected}>
+            <option
+              key={i}
+              value={option.value}
+              selected={option.selected}
+            >
               {option.label}
             </option>
           ))}

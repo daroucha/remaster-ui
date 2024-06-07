@@ -1,6 +1,9 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { $color, $size } from '@/tokens'
-import { InputBaseElement, StyledInputBase } from '../Field/styled-input-base'
+import {
+  InputBaseElement,
+  StyledInputBase,
+} from '../Field/styled-input-base'
 
 const StyledSelect = styled(InputBaseElement)`
   background: transparent;
@@ -10,7 +13,9 @@ const StyledSelect = styled(InputBaseElement)`
   z-index: 3;
 `
 
-const StyledSelectBase = styled(StyledInputBase)<{ $disabled: boolean }>`
+const StyledSelectBase = styled(StyledInputBase)<{
+  $disabled: boolean
+}>`
   background: ${$color.background.surface.primary.light};
   border-radius: ${$size.radius.sm};
   box-shadow: ${`inset 0 0 0 ${$size.border.sm} ${$color.border.default.secondary.light}`};

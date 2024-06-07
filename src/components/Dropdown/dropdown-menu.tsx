@@ -17,11 +17,11 @@ function DropdownMenu({
 
   const transition = useTransition(visibility, {
     from: {
-      opacity: 0,
+      opacity: 0 as any,
       y: position === 'bottom' ? '90%' : '-90%',
     },
     enter: {
-      opacity: 1,
+      opacity: 1 as any,
       y: position === 'bottom' ? '100%' : '-100%',
       config: {
         easing: easings.easeOutCubic,
@@ -29,7 +29,7 @@ function DropdownMenu({
       },
     },
     leave: {
-      opacity: 0,
+      opacity: 0 as any,
       y: position === 'bottom' ? '90%' : '-90%',
       config: {
         easing: easings.easeInCubic,

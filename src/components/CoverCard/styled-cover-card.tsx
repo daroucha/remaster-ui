@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $motion, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledCoverCard = styled.div<{ $clickable: boolean }>`
   align-items: center;
@@ -31,7 +31,9 @@ const CCCoverFX = styled.div<{ $hover: boolean }>`
   position: absolute;
   top: 0px;
   transform: ${(props) =>
-    props.$hover ? 'translateY(8%) scale(94%)' : 'translateY(0%) scale(100%)'};
+    props.$hover
+      ? 'translateY(8%) scale(94%)'
+      : 'translateY(0%) scale(100%)'};
   transition-timing-function: ${$motion.curve.sine};
   transition-duration: ${$motion.duration.default};
   z-index: 0;
@@ -60,7 +62,9 @@ const CCTextArea = styled(SansSerif)`
 const CCTitle = styled.span<{ $state?: boolean }>`
   color: inherit;
   font-size: ${(props) =>
-    props.$state ? $size.type.fontSize.text.lg : $size.type.fontSize.text.md};
+    props.$state
+      ? $size.type.fontSize.text.lg
+      : $size.type.fontSize.text.md};
   font-weight: ${(props) =>
     props.$state
       ? $primitives.typography.fontWeight.sans.bold

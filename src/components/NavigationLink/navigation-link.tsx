@@ -37,7 +37,6 @@ function NavigationLink({
     <StyledNL
       $state={active}
       $size={size}
-      $disabled={disabled}
       disabled={disabled}
       as={as}
       onClick={(event: React.MouseEvent) => {

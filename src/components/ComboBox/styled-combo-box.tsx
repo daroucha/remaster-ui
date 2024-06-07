@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledComboBox = styled.div`
   display: block;
@@ -11,7 +11,9 @@ const StyledComboBox = styled.div`
 const shadow =
   '0px 51px 14px 0px rgba(0, 0, 0, 0.00), 0px 33px 13px 0px rgba(0, 0, 0, 0.01), 0px 18px 11px 0px rgba(0, 0, 0, 0.03), 0px 8px 8px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.06)'
 
-const CBMenu = styled.ul<{ $position: string }>`
+const CBMenu = styled.ul<{
+  $position: string
+}>`
   background: ${$color.background.elevation.secondary.light};
   backdrop-filter: blur(20px);
   border-bottom-left-radius: ${(props) =>
@@ -46,14 +48,20 @@ const CBMenu = styled.ul<{ $position: string }>`
       ? `calc(${$size.radius.md} + ${$space.block.xxs})`
       : $space.block.xxs};
   position: absolute;
-  top: ${(props) => (props.$position === 'top' ? $size.radius.md : 'initial')};
+  top: ${(props) =>
+    props.$position === 'top' ? $size.radius.md : 'initial'};
   transform: ${(props) =>
-    props.$position === 'top' ? 'translateY(-100%)' : 'translateY(100%)'};
+    props.$position === 'top'
+      ? 'translateY(-100%)'
+      : 'translateY(100%)'};
   width: calc(100% - calc(${$size.border.sm} * 2));
   z-index: 1;
 `
 
-const CBOption = styled(SansSerif)<{ $active?: boolean; $clickable?: boolean }>`
+const CBOption = styled(SansSerif)<{
+  $active?: boolean
+  $clickable?: boolean
+}>`
   align-items: center;
   background: ${(props) =>
     props.$active

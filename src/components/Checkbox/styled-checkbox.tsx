@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledCheckboxArea = styled.label<{ $disabled?: boolean }>`
   align-items: center;
@@ -52,7 +52,7 @@ const CheckboxInputMark = styled.div<{ $checked?: boolean }>`
   }
 `
 
-const CheckboxInput = styled.input.attrs({ type: 'checkbox' })`
+const CheckboxInput = styled.input`
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;

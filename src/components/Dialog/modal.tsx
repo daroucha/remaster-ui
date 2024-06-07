@@ -17,9 +17,9 @@ function Modal({ children, onClickOutside, visibility }: PropsModal) {
   const overlayRef = useSpringRef()
   const overlayTransition = useTransition(visibility, {
     ref: overlayRef,
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
+    from: { opacity: 0 as any },
+    enter: { opacity: 1 as any },
+    leave: { opacity: 0 as any },
     config: {
       duration: 120,
     },
@@ -28,9 +28,9 @@ function Modal({ children, onClickOutside, visibility }: PropsModal) {
   const windowRef = useSpringRef()
   const windowTransition = useTransition(visibility, {
     ref: windowRef,
-    from: { y: '10%', opacity: 0 },
-    enter: { y: '0%', opacity: 1 },
-    leave: { y: '10%', opacity: 0 },
+    from: { y: '10%', opacity: 0 as any },
+    enter: { y: '0%', opacity: 1 as any },
+    leave: { y: '10%', opacity: 0 as any },
     config: {
       easing: easings.easeOutSine,
       duration: 200,
@@ -49,7 +49,7 @@ function Modal({ children, onClickOutside, visibility }: PropsModal) {
                 <Window as={animated.div} style={props}>
                   {children}
                 </Window>
-              ),
+              )
           )}
 
           <Overlay
@@ -60,7 +60,7 @@ function Modal({ children, onClickOutside, visibility }: PropsModal) {
             }}
           />
         </StyledModal>
-      ),
+      )
   )
 }
 

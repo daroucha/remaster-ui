@@ -14,7 +14,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'react-jp-ui',
+      name: 'remaster-ui',
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
@@ -33,6 +33,6 @@ export default defineConfig({
     react(),
     libInjectCss(),
     svgr(),
-    dts({ exclude: ['**/*.stories.tsx'] }),
+    dts({ exclude: ['**/*.stories.tsx', 'docs/*'] }),
   ],
 })

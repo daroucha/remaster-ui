@@ -7,10 +7,12 @@
 
 /// <reference types="vite-plugin-svgr/client" />
 
-import Bluray from './assets/bluray.svg?react'
-import DolbyTrueHd from './assets/dolby-trhd.svg?react'
-import DtsMa from './assets/dts-ma.svg?react'
-import Dvd from './assets/dvd.svg?react'
 import SvgSpinner from './assets/spinner.svg?react'
 
-export { Bluray, DtsMa, DolbyTrueHd, Dvd, SvgSpinner }
+import Bluray from '@/icons/lib/Bluray'
+import Collection from '@/icons/lib/Collection'
+import DolbyTrueHd from '@/icons/lib/DolbyTrueHd'
+import DtsMA from '@/icons/lib/DtsMA'
+import Dvd from '@/icons/lib/Dvd'
+
+export { Bluray, Collection, DolbyTrueHd, DtsMA, Dvd, SvgSpinner }

@@ -26,13 +26,14 @@ import Header from './Header'
 import IconButton from './IconButton'
 import ImageRadio from './ImageRadio'
 import InlineStepper from './InlineStepper'
+import Link from './Link'
 import ListComponent from './DataList'
 import Menu from './Menu'
 import NavigationLink from './NavigationLink'
-import NavLink from './NavLink'
 import Paginator from './Paginator'
 import PerspectiveCarousel from './PerspectiveCarousel'
 import ProgressBar from './ProgressBar'
+import Remaster from './Remaster'
 import SectionTitle from './SectionTitle'
 import SegmentedControl from './SegmentedControl'
 import Select from './Select'
@@ -64,13 +65,14 @@ export {
   IconButton,
   ImageRadio,
   InlineStepper,
+  Link,
   ListComponent,
   Menu,
   NavigationLink,
-  NavLink,
   Paginator,
   PerspectiveCarousel,
   ProgressBar,
+  Remaster,
   SectionTitle,
   SegmentedControl,
   Select,

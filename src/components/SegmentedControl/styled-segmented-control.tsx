@@ -1,12 +1,13 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledSegmentedControl = styled.div`
   align-items: center;
   background: ${$color.background.surface.primary.light};
   border-radius: ${$size.radius.md};
-  box-shadow: 0 0 0 ${$size.border.sm} ${$color.border.default.secondary.light};
+  box-shadow: 0 0 0 ${$size.border.sm}
+    ${$color.border.default.secondary.light};
   box-sizing: border-box;
   display: inline-flex;
   gap: ${$space.gap.xs};
@@ -71,4 +72,9 @@ const SCText = styled(SansSerif)`
   user-select: none;
 `
 
-export { StyledSegmentedControl, StyledSegmentedControlTab, SCIcon, SCText }
+export {
+  StyledSegmentedControl,
+  StyledSegmentedControlTab,
+  SCIcon,
+  SCText,
+}

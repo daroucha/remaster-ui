@@ -1,6 +1,6 @@
 import { $color, $motion, $primitives, $size, $space } from '@/tokens'
 import SansSerif from '@/fonts/sansSerif'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledPerspectiveCarousel = styled.div`
   align-items: center;

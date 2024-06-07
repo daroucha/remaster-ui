@@ -1,5 +1,5 @@
 import { $size, $motion } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const aspectRatio = (type: string) => {
   switch (type) {

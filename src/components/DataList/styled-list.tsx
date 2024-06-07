@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledList = styled.li`
   align-items: center;
@@ -65,4 +65,11 @@ const ListText = styled.span`
   line-height: ${$size.type.lineHeight.text.sm};
 `
 
-export { StyledList, ListMain, ListIcon, ListContent, ListTitle, ListText }
+export {
+  StyledList,
+  ListMain,
+  ListIcon,
+  ListContent,
+  ListTitle,
+  ListText,
+}

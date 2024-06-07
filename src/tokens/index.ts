@@ -5,11 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import $primitives from './assets/primitives'
-import $color from './assets/colors'
-import $size from './assets/sizes'
-import $space from './assets/spaces'
-import $motion from './assets/motion'
-import $style from './assets/style'
+import $color from './lib/colors'
+import $motion from './lib/motion'
+import $primitives from './lib/primitives'
+import $size from './lib/sizes'
+import $space from './lib/spaces'
+import $style from './lib/style'
+import $theme from './lib/themes'
 
-export { $primitives, $color, $size, $space, $motion, $style }
+export { $primitives, $color, $size, $space, $motion, $style, $theme }

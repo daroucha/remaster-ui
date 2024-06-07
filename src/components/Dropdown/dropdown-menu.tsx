@@ -9,16 +9,19 @@ interface PropsDropdownMenu {
   position?: 'bottom' | 'top'
 }
 
-function DropdownMenu({ children, position = 'bottom' }: PropsDropdownMenu) {
+function DropdownMenu({
+  children,
+  position = 'bottom',
+}: PropsDropdownMenu) {
   const { visibility } = useDropdownContext()
 
   const transition = useTransition(visibility, {
     from: {
-      opacity: 0,
+      opacity: 0 as any,
       y: position === 'bottom' ? '90%' : '-90%',
     },
     enter: {
-      opacity: 1,
+      opacity: 1 as any,
       y: position === 'bottom' ? '100%' : '-100%',
       config: {
         easing: easings.easeOutCubic,
@@ -26,7 +29,7 @@ function DropdownMenu({ children, position = 'bottom' }: PropsDropdownMenu) {
       },
     },
     leave: {
-      opacity: 0,
+      opacity: 0 as any,
       y: position === 'bottom' ? '90%' : '-90%',
       config: {
         easing: easings.easeInCubic,
@@ -41,11 +44,12 @@ function DropdownMenu({ children, position = 'bottom' }: PropsDropdownMenu) {
         <StyledDropdownMenu as={animated.div} style={props}>
           <Menu>{children}</Menu>
         </StyledDropdownMenu>
-      ),
+      )
   )
 }
 
 function DropdownItem({
+  as,
   children,
   disabled,
   divider,
@@ -59,6 +63,7 @@ function DropdownItem({
 
   return (
     <MenuItem
+      as={as}
       children={children}
       disabled={disabled}
       divider={divider}

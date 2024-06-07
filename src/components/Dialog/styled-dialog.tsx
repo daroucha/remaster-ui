@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const ActionsVariants = (variant: string | undefined) => {
   switch (variant) {
@@ -18,7 +18,10 @@ const ActionsVariants = (variant: string | undefined) => {
   }
 }
 
-const DialogActions = styled.div<{ $variant: string; $divider?: boolean }>`
+const DialogActions = styled.div<{
+  $variant: string
+  $divider?: boolean
+}>`
   align-items: center;
   border-top: ${(props) =>
     props.$divider
@@ -34,7 +37,8 @@ const DialogActions = styled.div<{ $variant: string; $divider?: boolean }>`
   width: 100%;
 
   button {
-    width: ${(props) => (props.$variant === 'stretch' ? '100%' : 'auto')};
+    width: ${(props) =>
+      props.$variant === 'stretch' ? '100%' : 'auto'};
   }
 `
 

@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledFieldBase = styled.div`
   -moz-appearance: none;
@@ -23,7 +23,7 @@ const FieldBaseLegend = styled(SansSerif)`
   width: 100%;
 `
 
-const FieldBaseLabel = styled.span`
+const FieldBaseLabel = styled.label`
   color: inherit;
   font-size: ${$size.type.fontSize.text.md};
   font-weight: ${$primitives.typography.fontWeight.sans.bold};

@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledIconButton = styled.button<{
   disabled?: boolean
@@ -39,13 +39,14 @@ const StyledIconButton = styled.button<{
 `
 
 const IBIcon = styled.div<{ $size: string }>`
+  aspect-ratio: 1/1;
   align-items: center;
   color: inherit;
   display: flex;
-  height: ${(props) =>
+  min-height: ${(props) =>
     props.$size === 'medium' ? $size.icon.md : $size.icon.xs};
   justify-content: center;
-  width: ${(props) =>
+  min-width: ${(props) =>
     props.$size === 'medium' ? $size.icon.md : $size.icon.xs};
 
   svg {

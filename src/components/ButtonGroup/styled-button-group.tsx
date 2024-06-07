@@ -1,5 +1,5 @@
 import { $color, $size, $style } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const border = `inset 0 0 0 ${$size.border.sm} ${$color.border.default.secondary.light}`
 
@@ -11,7 +11,8 @@ const StyledButtonGroup = styled.div<{
   align-items: stretch;
   background: ${$color.background.surface.primary.light};
   border-radius: ${$size.radius.md};
-  box-shadow: ${(props) => (props.$variant === 'primary' ? shadow : border)};
+  box-shadow: ${(props) =>
+    props.$variant === 'primary' ? shadow : border};
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
@@ -44,7 +45,7 @@ const BGItem = styled.div`
     }
   }
 
-  &:not(:first-child) {
+  &:not(:first-of-type) {
     .master-dropdown-button,
     .master-action-button-tertiary,
     .master-icon-button {

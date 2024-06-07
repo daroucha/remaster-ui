@@ -14,6 +14,7 @@ interface PropsDropdownButton {
   caret?: boolean
   disabled?: boolean
   leading?: React.ReactNode
+  size?: 'small' | 'medium'
   text?: string
 }
 
@@ -21,6 +22,7 @@ function DropdownButton({
   caret = true,
   disabled,
   leading,
+  size = 'small',
   text,
 }: PropsDropdownButton) {
   const { visibility, setVisibility } = useDropdownContext()
@@ -45,7 +47,7 @@ function DropdownButton({
 
       {(hasText || caret) && (
         <DBContent>
-          {hasText && <DBText>{text}</DBText>}
+          {hasText && <DBText $size={size}>{text}</DBText>}
 
           {caret && (
             <DBCaret $position={visibility}>

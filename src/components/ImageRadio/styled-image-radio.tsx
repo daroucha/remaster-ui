@@ -1,5 +1,5 @@
 import { $color, $motion, $primitives, $size } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledImageRadio = styled.label<{
   $disabled?: boolean

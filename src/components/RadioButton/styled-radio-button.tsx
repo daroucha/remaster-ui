@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledRadioButtonArea = styled.label<{ $disabled?: boolean }>`
   align-items: center;
@@ -49,7 +49,7 @@ const RadioButtonInputMark = styled.div<{ $checked?: boolean }>`
   }
 `
 
-const RadioButtonInput = styled.input.attrs({ type: 'radio' })`
+const RadioButtonInput = styled.input`
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;

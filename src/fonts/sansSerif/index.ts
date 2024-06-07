@@ -6,7 +6,7 @@
  */
 
 import { $primitives } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import sansSerifBook from './assets/book'
 import sansSerifMedium from './assets/medium'
 import sansSerifBold from './assets/bold'

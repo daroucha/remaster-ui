@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space, $style } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledMenu = styled.div`
   background-color: ${$color.background.elevation.tertiary.light};
@@ -50,7 +50,10 @@ const StyledMenuItem = styled.div<{ $disabled?: boolean }>`
   z-index: 3;
 `
 
-const MIContent = styled(SansSerif)<{ $active: boolean; $disabled?: boolean }>`
+const MIContent = styled(SansSerif)<{
+  $active: boolean
+  $disabled?: boolean
+}>`
   align-items: center;
   background: ${(props) =>
     props.$active
@@ -75,7 +78,9 @@ const MIContent = styled(SansSerif)<{ $active: boolean; $disabled?: boolean }>`
         ? 'transparent'
         : $color.background.action.hover.accent.light};
     color: ${(props) =>
-      props.$disabled ? 'inherit' : $color.text.inverted.primary.light};
+      props.$disabled
+        ? 'inherit'
+        : $color.text.inverted.primary.light};
   }
 `
 

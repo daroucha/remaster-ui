@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $motion, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledToggleArea = styled.label<{
   $disabled?: boolean
@@ -63,7 +63,7 @@ const ToggleInputMark = styled.div<{
   }
 `
 
-const ToggleInput = styled.input.attrs({ type: 'checkbox' })`
+const ToggleInput = styled.input`
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;

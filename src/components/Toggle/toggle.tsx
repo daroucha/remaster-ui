@@ -22,7 +22,7 @@ interface PropsToggle extends PropsField {
   indeterminate?: boolean
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
-    data: { checked: boolean; id: string },
+    data: { checked: boolean; id: string }
   ) => void
 }
 
@@ -54,6 +54,7 @@ function Toggle({
           </ToggleInputMark>
 
           <ToggleInput
+            type="checkbox"
             id={toggleId}
             disabled={disabled}
             checked={isChecked}
@@ -75,7 +76,9 @@ function Toggle({
           />
         </ToggleInputArea>
 
-        {text && <ToggleLabel $checked={isChecked}>{text}</ToggleLabel>}
+        {text && (
+          <ToggleLabel $checked={isChecked}>{text}</ToggleLabel>
+        )}
       </StyledToggleArea>
 
       {tip && (

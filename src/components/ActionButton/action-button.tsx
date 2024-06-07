@@ -16,11 +16,18 @@ const components: any = {
   tertiary: StyledTertiaryButton,
 }
 
-interface PropsActionButton {
+type PolymorphicAsProp<E extends React.ElementType> = {
+  as?: E
+}
+
+interface PropsActionButton
+  extends PolymorphicAsProp<React.ElementType> {
   disabled?: boolean
   leading?: React.ReactNode
   loading?: boolean
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void
   size: 'small' | 'medium'
   text: string
   type?: string
@@ -29,6 +36,7 @@ interface PropsActionButton {
 }
 
 function ActionButton({
+  as,
   disabled,
   leading,
   loading,
@@ -38,6 +46,7 @@ function ActionButton({
   type,
   trailing,
   variant,
+  ...restProps
 }: PropsActionButton) {
   const ActionButtonId = prefix + useId()
 
@@ -45,10 +54,13 @@ function ActionButton({
 
   return (
     <Button
+      as={as}
       id={ActionButtonId}
       className={`${prefix}action-button-${variant}`}
       disabled={disabled}
-      onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      onClick={(
+        event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+      ) => {
         if (disabled) {
           event.preventDefault()
         }
@@ -58,6 +70,7 @@ function ActionButton({
         }
       }}
       type={type}
+      {...restProps}
     >
       {loading && (
         <ButtonLoadingBase>
@@ -65,7 +78,9 @@ function ActionButton({
         </ButtonLoadingBase>
       )}
 
-      {leading && <ButtonIconBase $loading={loading}>{leading}</ButtonIconBase>}
+      {leading && (
+        <ButtonIconBase $loading={loading}>{leading}</ButtonIconBase>
+      )}
 
       <ButtonTextBase $size={size} $loading={loading}>
         {text}

@@ -1,5 +1,5 @@
 import { $color, $motion, $primitives, $size } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledProgressBar = styled.div<{ $type: string }>`
   background: ${$color.background.elevation.secondary.light};

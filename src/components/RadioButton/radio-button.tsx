@@ -22,7 +22,7 @@ interface PropsRadioButton extends PropsField {
   name?: string
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
-    data: { checked: boolean; id: string },
+    data: { checked: boolean; id: string }
   ) => void
 }
 
@@ -53,6 +53,7 @@ function RadioButton({
           </RadioButtonInputMark>
 
           <RadioButtonInput
+            type="radio"
             id={radioId}
             disabled={disabled}
             checked={checked}
@@ -73,7 +74,11 @@ function RadioButton({
           />
         </RadioButtonInputArea>
 
-        {text && <RadioButtonLabel $checked={checked}>{text}</RadioButtonLabel>}
+        {text && (
+          <RadioButtonLabel $checked={checked}>
+            {text}
+          </RadioButtonLabel>
+        )}
       </StyledRadioButtonArea>
 
       {tip && (

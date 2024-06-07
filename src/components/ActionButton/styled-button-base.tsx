@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledButtonBase = styled.button<{ disabled: boolean }>`
   -moz-appearance: none;
@@ -37,7 +37,10 @@ const ButtonIconBase = styled.div<{ $loading?: boolean }>`
   }
 `
 
-const ButtonTextBase = styled(SansSerif)<{ $size: string; $loading?: boolean }>`
+const ButtonTextBase = styled(SansSerif)<{
+  $size: string
+  $loading?: boolean
+}>`
   color: inherit;
   display: block;
   font-size: ${(props) =>
@@ -68,4 +71,9 @@ const ButtonLoadingBase = styled.div`
   }
 `
 
-export { StyledButtonBase, ButtonIconBase, ButtonTextBase, ButtonLoadingBase }
+export {
+  StyledButtonBase,
+  ButtonIconBase,
+  ButtonTextBase,
+  ButtonLoadingBase,
+}

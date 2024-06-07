@@ -41,3 +41,16 @@ export const Tertiary = {
     variant: 'tertiary',
   },
 }
+
+export const AsLink = {
+  args: {
+    as: 'a',
+    loading: false,
+    disabled: false,
+    leading: <Heart />,
+    size: 'small',
+    text: 'Secondary Button',
+    trailing: <ArrowRight />,
+    variant: 'secondary',
+  },
+}

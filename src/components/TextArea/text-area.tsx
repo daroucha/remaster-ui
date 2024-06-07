@@ -20,7 +20,7 @@ import { useId } from 'react'
 interface PropsTextArea extends PropsField, PropsInput {
   cols?: number
   name?: string
-  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
+  onChange?: (event: React.ChangeEvent) => void
   required?: boolean
   rows?: number
 }
@@ -41,6 +41,8 @@ function TextArea({
 }: PropsTextArea) {
   const textAreaId = prefix + useId()
 
+  const TextAreaElement = InputBaseElement.withComponent('textarea')
+
   return (
     <StyledFieldBase>
       {label && (
@@ -58,10 +60,9 @@ function TextArea({
           </InputBaseLeading>
         )}
 
-        <InputBaseElement
+        <TextAreaElement
           $leading={!!leading}
           $trailing={!!trailing}
-          as="textarea"
           cols={cols}
           className="textarea_type"
           disabled={disabled}
@@ -78,7 +79,9 @@ function TextArea({
           defaultValue={value}
         />
 
-        {trailing && <InputBaseTrailing>{trailing}</InputBaseTrailing>}
+        {trailing && (
+          <InputBaseTrailing>{trailing}</InputBaseTrailing>
+        )}
       </StyledInputBase>
 
       {tip && (

@@ -1,22 +1,24 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
-const StyledLink = styled.a<{ $disabled?: boolean }>`
+const StyledLink = styled.a<{
+  disabled?: boolean
+}>`
   align-items: center;
   color: ${(props) =>
-    props.$disabled
+    props.disabled
       ? $color.text.action.disabled.accent.light
       : $color.text.action.default.accent.light};
-  cursor: ${(props) => (props.$disabled ? 'default' : 'pointer')};
+  cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   display: inline-flex;
   flex-direction: row;
-  opacity: ${(props) => (props.$disabled ? '60%' : '100%')};
+  opacity: ${(props) => (props.disabled ? '60%' : '100%')};
   text-decoration: none;
 
   &:hover {
     box-shadow: ${(props) =>
-      props.$disabled ? 'none' : '0 2px 0 currentColor'};
+      props.disabled ? 'none' : '0 2px 0 currentColor'};
   }
 `
 

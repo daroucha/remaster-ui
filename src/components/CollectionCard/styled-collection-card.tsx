@@ -1,8 +1,10 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $primitives, $size, $space } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
-const StyledCollectionCard = styled.div<{ $clickable: boolean }>`
+const StyledCollectionCard = styled.div<{
+  $clickable: boolean
+}>`
   background: ${$color.background.surface.primary.light};
   border-radius: ${$size.radius.lg};
   box-sizing: border-box;

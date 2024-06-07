@@ -1,7 +1,16 @@
 import { CaretRight } from '@phosphor-icons/react'
-import { LinkContent, LinkIcon, LinkText, StyledLink } from './styled-link'
+import {
+  LinkContent,
+  LinkIcon,
+  LinkText,
+  StyledLink,
+} from './styled-link'
 
-interface PropsLink {
+type PolymorphicAsProp<E extends React.ElementType> = {
+  as?: E
+}
+
+interface PropsLink extends PolymorphicAsProp<React.ElementType> {
   children: string | React.ReactNode
   disabled?: boolean
   href?: string
@@ -11,7 +20,8 @@ interface PropsLink {
   trailing?: boolean
 }
 
-function NavLink({
+function Link({
+  as,
   children,
   disabled,
   href,
@@ -19,16 +29,19 @@ function NavLink({
   onClick,
   size,
   trailing,
+  ...restProps
 }: PropsLink) {
   return (
     <StyledLink
-      $disabled={disabled}
+      disabled={disabled}
+      as={as}
       href={!disabled && href ? href : undefined}
       onClick={() => {
         if (!disabled && onClick) {
           onClick()
         }
       }}
+      {...restProps}
     >
       <LinkContent>
         {leading && <LinkIcon>{leading}</LinkIcon>}
@@ -38,7 +51,9 @@ function NavLink({
 
       {trailing && (
         <LinkIcon>
-          <CaretRight weight={size === 'small' ? 'regular' : 'bold'} />
+          <CaretRight
+            weight={size === 'small' ? 'regular' : 'bold'}
+          />
         </LinkIcon>
       )}
     </StyledLink>
@@ -46,4 +61,4 @@ function NavLink({
 }
 
 export type { PropsLink }
-export default NavLink
+export default Link

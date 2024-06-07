@@ -1,6 +1,6 @@
 import SansSerif from '@/fonts/sansSerif'
 import { $color, $motion, $primitives, $size } from '@/tokens'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const StyledPageIndicator = styled.div<{ $active: boolean }>`
   align-items: center;
@@ -21,7 +21,9 @@ const StyledPageIndicator = styled.div<{ $active: boolean }>`
 
 const PIText = styled(SansSerif)<{ $active: boolean }>`
   color: ${(props) =>
-    props.$active ? 'inherit' : $color.text.action.default.accent.light};
+    props.$active
+      ? 'inherit'
+      : $color.text.action.default.accent.light};
   font-size: ${$size.type.fontSize.text.sm};
   font-weight: ${$primitives.typography.fontWeight.sans.bold};
   line-height: ${$size.type.lineHeight.text.sm};

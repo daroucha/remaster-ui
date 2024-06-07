@@ -31,6 +31,7 @@ export default Page() {
 - [Hacker0x01/react-datepicker](https://github.com/Hacker0x01/react-datepicker)
 - [pmndrs/react-spring](https://github.com/pmndrs/react-spring)
 - [henperi/image-validator](https://github.com/henperi/image-validator)
+- [hjortureh/css3.coverflow](https://github.com/hjortureh/css3.coverflow)
 
 ## Storybook
 

@@ -33,6 +33,7 @@ import NavigationLink from './NavigationLink'
 import Paginator from './Paginator'
 import PerspectiveCarousel from './PerspectiveCarousel'
 import ProgressBar from './ProgressBar'
+import Remaster from './Remaster'
 import SectionTitle from './SectionTitle'
 import SegmentedControl from './SegmentedControl'
 import Select from './Select'
@@ -71,6 +72,7 @@ export {
   Paginator,
   PerspectiveCarousel,
   ProgressBar,
+  Remaster,
   SectionTitle,
   SegmentedControl,
   Select,

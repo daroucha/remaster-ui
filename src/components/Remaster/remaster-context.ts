@@ -1,9 +1,13 @@
 import { createContext, useContext } from 'react'
+import RemasterType, { ThemeMode } from './remaster-types'
 
-import RemasterType from './remaster-types'
+const localTheme = localStorage.getItem(
+  'remaster-theme-mode'
+) as ThemeMode
+const initialTheme = 'auto'
 
 const initialState: RemasterType = {
-  theme: 'light',
+  theme: localTheme || initialTheme,
   setTheme: () => {},
 }
 

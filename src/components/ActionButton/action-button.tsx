@@ -31,6 +31,7 @@ interface PropsActionButton
   size: 'small' | 'medium'
   text: string
   type?: string
+  to?: string
   trailing?: React.ReactNode
   variant: 'primary' | 'secondary' | 'tertiary'
 }

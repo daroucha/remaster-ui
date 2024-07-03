@@ -12,12 +12,14 @@ type PolymorphicAsProp<E extends React.ElementType> = {
 interface PropsNavigationLink
   extends PolymorphicAsProp<React.ElementType> {
   active?: boolean
+  className?: string
   disabled?: boolean
   href?: string
   leading?: React.ReactNode
   onClick?: (event: React.MouseEvent) => void
   size: 'small' | 'medium'
   text: string
+  to?: string
   trailing?: React.ReactNode
 }
 

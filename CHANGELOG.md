@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.1.1
+
+### Bug fixes
+
+- Add export for Modal component ([5cfe343](https://github.com/daroucha/remaster-ui/commit/5cfe34387699c4ca3c78869df9872baae67a1605))
+- Add to prop type for Link, NavigationLink, MenuItem, DropdownMenuItem, ActionButton and IconButton ([20d6eb7](https://github.com/daroucha/remaster-ui/commit/20d6eb7c64168eda26f48dcd286ba537a0844150))
+- Fix text underline for Link, NavigationLink, MenuItem, DropdownMenuItem, ActionButton and IconButton ([b2ca519](https://github.com/daroucha/remaster-ui/commit/b2ca5191c1b8ba06c3a7b7bc25ff72823c8fef3b))
+
+### Features
+
+- ProgressBar now absorves the color of the parent wrapper ([58d4c5f](https://github.com/daroucha/remaster-ui/commit/58d4c5f493df80439857473e40f0132fcc49926a))
+
 ## 1.1.0
 
 ### Breaking changes

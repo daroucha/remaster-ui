@@ -12,11 +12,13 @@ type PolymorphicAsProp<E extends React.ElementType> = {
 
 interface PropsLink extends PolymorphicAsProp<React.ElementType> {
   children: string | React.ReactNode
+  className?: string
   disabled?: boolean
   href?: string
   leading?: React.ReactNode
   onClick?: () => void
   size: 'small' | 'medium'
+  to?: string
   trailing?: boolean
 }
 

@@ -29,6 +29,7 @@ const StyledIconButton = styled.button<{
   opacity: ${(props) => (props.disabled ? '60%' : '100%')};
   padding-block: ${$space.inline.xs};
   padding-inline: ${$space.inline.sm};
+  text-decoration: none;
 
   &:hover:not(:disabled) {
     background: ${(props) =>

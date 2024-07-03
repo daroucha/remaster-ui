@@ -46,6 +46,7 @@ const StyledMenuItem = styled.div<{ $disabled?: boolean }>`
   display: block;
   flex-direction: column;
   position: relative;
+  text-decoration: none;
   width: 100%;
   z-index: 3;
 `

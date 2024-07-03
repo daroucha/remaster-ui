@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.1
+
+### Bug fixes
+
+- Add export for Modal component ()
+
+### Features
+
+- ProgressBar now absorves the color of the parent wrapper ()
+
 ## 1.1.0
 
 ### Breaking changes

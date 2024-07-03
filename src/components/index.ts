@@ -6,7 +6,7 @@
  */
 
 import { CoverCard } from './CoverCard'
-import { Dialog } from './Dialog'
+import { Dialog, Modal } from './Dialog'
 import ActionButton from './ActionButton'
 import Alert from './Alert'
 import Avatar from './Avatar'
@@ -68,6 +68,7 @@ export {
   Link,
   ListComponent,
   Menu,
+  Modal,
   NavigationLink,
   Paginator,
   PerspectiveCarousel,

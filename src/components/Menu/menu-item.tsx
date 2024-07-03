@@ -22,8 +22,9 @@ interface PropsMenuItem extends PolymorphicAsProp<React.ElementType> {
   divider?: boolean
   leading?: React.ReactNode
   onClick?: () => void
-  title: string
   text?: string
+  title: string
+  to?: string
   trailing?: React.ReactNode | string
 }
 

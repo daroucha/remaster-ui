@@ -18,6 +18,7 @@ interface PropsIconButton
   onClick?: (event: React.MouseEvent) => void
   size: 'small' | 'medium'
   text?: string
+  to?: string
 }
 
 function IconButton({

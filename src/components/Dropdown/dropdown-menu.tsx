@@ -58,6 +58,7 @@ function DropdownItem({
   title,
   text,
   trailing,
+  ...restProps
 }: PropsMenuItem) {
   const { setVisibility } = useDropdownContext()
 
@@ -77,6 +78,7 @@ function DropdownItem({
       title={title}
       text={text}
       trailing={trailing}
+      {...restProps}
     />
   )
 }

@@ -6,6 +6,7 @@
 
 - Add export for Modal component ()
 - Add to prop type for Link, NavigationLink, MenuItem, DropdownMenuItem, ActionButton and IconButton ()
+- Fix text underline for Link, NavigationLink, MenuItem, DropdownMenuItem, ActionButton and IconButton ()
 
 ### Features
 

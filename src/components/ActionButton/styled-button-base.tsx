@@ -19,6 +19,7 @@ const StyledButtonBase = styled.button<{ disabled: boolean }>`
   padding-block: ${$space.block.sm};
   padding-inline: ${$space.inline.md};
   position: relative;
+  text-decoration: none;
 `
 
 const ButtonIconBase = styled.div<{ $loading?: boolean }>`

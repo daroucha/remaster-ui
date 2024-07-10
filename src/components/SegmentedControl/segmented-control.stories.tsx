@@ -10,6 +10,7 @@ export const Default = {
   args: {
     disabled: false,
     defaultValue: 1,
+    onChange: (value: string | number) => console.log(value),
     children: (
       <>
         <SegmentedControl.Tab

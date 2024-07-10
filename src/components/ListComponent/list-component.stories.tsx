@@ -1,11 +1,11 @@
 import { Bluray } from '@/icons'
-import DataList from './data-list'
+import DataList from './list-component'
 import Checkbox from '../Checkbox'
 import { Cover } from '../CoverCard'
 import { ArrowRight } from '@phosphor-icons/react'
 
 export default {
-  title: '📊 Data Presentation/DataList',
+  title: '📊 Data Presentation/ListComponent',
   component: DataList,
 }
 

@@ -2,7 +2,7 @@ import { Disc, DotsThree } from '@phosphor-icons/react'
 import ButtonGroup from '../ButtonGroup'
 import DataTable, { PropsDataTable } from './data-table'
 import ActionButton from '../ActionButton'
-import List from '../DataList'
+import List from '../ListComponent'
 import { Cover } from '../CoverCard'
 import { Bluray, Dvd } from '@/icons'
 import { createElement } from 'react'
@@ -111,10 +111,17 @@ export const Default = {
 
               <DataTable.Cell align="end" width="auto">
                 <ButtonGroup variant="primary">
-                  <ActionButton size="small" text="Open" variant="tertiary" />
+                  <ActionButton
+                    size="small"
+                    text="Open"
+                    variant="tertiary"
+                  />
 
                   <Dropdown>
-                    <Dropdown.Button leading={<DotsThree />} caret={false} />
+                    <Dropdown.Button
+                      leading={<DotsThree />}
+                      caret={false}
+                    />
 
                     <Dropdown.Menu>
                       <Dropdown.Item title="Option" />

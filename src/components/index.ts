@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { CoverCard } from './CoverCard'
+import { Cover, CoverCard, CoverStack } from './CoverCard'
 import { Dialog, Modal } from './Dialog'
 import ActionButton from './ActionButton'
 import Alert from './Alert'
@@ -27,7 +27,7 @@ import IconButton from './IconButton'
 import ImageRadio from './ImageRadio'
 import InlineStepper from './InlineStepper'
 import Link from './Link'
-import ListComponent from './DataList'
+import ListComponent from './ListComponent'
 import Menu from './Menu'
 import NavigationLink from './NavigationLink'
 import Paginator from './Paginator'
@@ -54,7 +54,9 @@ export {
   Chip,
   CollectionCard,
   ComboBox,
+  Cover,
   CoverCard,
+  CoverStack,
   DashedButton,
   DataTable,
   DatePicker,

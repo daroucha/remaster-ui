@@ -7,7 +7,10 @@ const StyledImage = styled.picture<{
 }>`
   align-items: center;
   aspect-ratio: ${(props) => (props.$ratio ? props.$ratio : 'auto')};
-  background: ${$color.background.surface.secondary.light};
+  background: ${(props) =>
+    props.$raw
+      ? 'transparent'
+      : $color.background.surface.secondary.light};
   border-radius: ${(props) => (props.$raw ? '0px' : $size.radius.lg)};
   color: ${$color.icon.plain.secondary.light};
   display: inline-flex;

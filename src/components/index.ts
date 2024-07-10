@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { CoverCard } from './CoverCard'
+import { Cover, CoverCard } from './CoverCard'
 import { Dialog, Modal } from './Dialog'
 import ActionButton from './ActionButton'
 import Alert from './Alert'
@@ -54,6 +54,7 @@ export {
   Chip,
   CollectionCard,
   ComboBox,
+  Cover,
   CoverCard,
   DashedButton,
   DataTable,

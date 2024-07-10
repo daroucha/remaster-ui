@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.3
+
+### Bug fixes
+
+- Add export for Cover, CoverStack component ([8d6b1d0](https://github.com/daroucha/remaster-ui/commit/8d6b1d0ab8d5fa2031539ca53d8fa45209b07ce4))
+- Fix background on raw BaseImage ([b1cef54](https://github.com/daroucha/remaster-ui/commit/b1cef54c73baadd67a0524947be080ac56230986))
+- Renamed DataList to ListComponent ([da1f0c7](https://github.com/daroucha/remaster-ui/commit/da1f0c716458b6737ec993941acee6adc72b64e3))
+
 ## 1.1.1
 
 ### Bug fixes
